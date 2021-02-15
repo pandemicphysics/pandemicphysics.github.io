@@ -1,0 +1,29 @@
+body {
+    background-color: darkturquoise;
+    font-family:Arial;
+}
+
+
+.intro-text {
+    border-radius: 20px;
+    box-shadow: 2.5px 2.5px 1px grey;
+    text-align: center;
+    background-color: white;
+    position: relative;
+    top: 40px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 20px;
+}
+
+.out {
+    text-align: center;
+    position:fixed;
+    left: 20px;
+    right: 20px;
+    bottom:20px;
+}
+
+th {
+    width: 25%
+}
