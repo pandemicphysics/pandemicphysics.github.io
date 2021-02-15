@@ -6,7 +6,7 @@ body {
 
 .intro-text {
     border-radius: 20px;
-    box-shadow: 2.5px 2.5px 1px grey;
+    box-shadow: 2.5px 5px 2.5px grey;
     text-align: center;
     background-color: white;
     position: relative;
@@ -18,13 +18,14 @@ body {
 }
 
 .out {
+    box-shadow: 0px -1px 5px grey;
     background-color: teal;
     text-align: center;
     position:fixed;
+    bottom: 0px;
     left: 0;
     right: 0;
     width: 100%;
-    bottom: 0px;
 }
 
 th {
