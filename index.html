@@ -17,13 +17,15 @@
 <body>
 
     <div id="splash">
-        <div class="halfblock" style="background-color: cadetblue; top: 0%;"></div>
-        <div class="halfblock" style="background-color: teal; top: 50%;"></div>
+        <div class="halfblock" style="background-color: cadetblue; top: 0%; height: 100%"></div>
 
-        <img src="assets/PP2.png" class="logo">
+        <div class="fade">
+            <div class="halfblock" style="background-color: teal; top: 50%;"></div>
+            <img src="assets/PP2.png" class="logo">
 
-        <div class="splash-text">
-            splash text probably smaller box
+            <div class="splash-text">
+                splash text probably smaller box
+            </div>
         </div>
 
         <div class="updated">
@@ -57,6 +59,11 @@
         $(document).ready(function(){
             $(window).scroll(function(){
                 $('.intro').css("opacity", $(window).scrollTop()/($(document).height()/2.5));
+            })
+        })
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                $('.fade').css("opacity", 1.2-$(window).scrollTop()/(0.5*$(document).height()));
             })
         })
     </script>
