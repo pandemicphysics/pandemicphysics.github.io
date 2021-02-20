@@ -1,45 +1,62 @@
-
 <!DOCTYPE html>
+
 <html>
 
 <head>
-    <link rel="stylesheet" href="index.css">
     <title>Pandemic Physics - the science of covid</title>
+
+    <link rel="stylesheet" href="home.css">
+
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+
 </head>
 
 <body>
-    <div style="text-align: center;">
-    <img src="assets/PP2.png" onclick="document.location='/'" style="width:15%;position:relative;top:5px;"/>
+
+    <div id="splash">
+        <div class="halfblock" style="background-color: cadetblue; top: 0%;"></div>
+        <div class="halfblock" style="background-color: teal; top: 50%;"></div>
+
+        <img src="assets/PP2.png" class="logo">
+
+        <div class="splash-text">
+            splash text probably smaller box
+        </div>
     </div>
 
-    <div class="intro-text">
-    The COVID-19 pandemic has had a huge influence on many aspects of science and its research - with medical physics being no exception.</br>
-    From the physical processes that hold the potential to aid mass testing, to a consideration of how droplet motion governs the design of masks, to our understanding of neurophysics in relation to post-COVID-19 syndrome (long COVID), to the modelling and statistics that regularly feature in news broadcasts, the medical physics community has been integral to combating the spread and effects of the pandemic.
-        </br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus nisl id tortor consectetur vulputate tincidunt eu nibh. Integer iaculis neque at sapien ultricies aliquet. Integer et felis dictum turpis molestie tincidunt eget at lacus. Fusce placerat erat eros, molestie dignissim risus mollis finibus. Praesent sit amet nisi pharetra, dapibus ipsum ut, iaculis eros. Mauris aliquam sem id metus facilisis tempor. Ut eu metus in lacus rhoncus commodo. Aenean rutrum fermentum sapien, quis sodales odio. Vestibulum volutpat finibus ligula ac lacinia.
-        </br>
-        Aliquam ante sapien, lobortis eu placerat ac, feugiat vitae mauris. Sed egestas finibus nibh, ac cursus metus dignissim nec. Vestibulum lacinia justo quis nisl ultrices porttitor nec vulputate risus. Maecenas aliquet elementum imperdiet. Vestibulum egestas at mi vitae pulvinar. Praesent eget risus elementum, consectetur risus ac, pulvinar leo. Aenean vitae augue sollicitudin, feugiat dolor ac, gravida magna. Nam quis ligula accumsan, euismod nibh vitae, interdum risus. Pellentesque vel velit tincidunt, iaculis dolor a, dictum neque. Phasellus eleifend malesuada mi sed elementum.
-        </br>
-        Aliquam volutpat aliquet convallis. Morbi egestas risus imperdiet sagittis maximus. Sed cursus eu tortor eu aliquam. Donec maximus lorem ut libero pulvinar laoreet. Donec sed nibh turpis. Sed tempus facilisis elit quis aliquet. Morbi in risus semper, ultricies dui quis, volutpat augue. Nunc condimentum, nibh vitae sagittis rutrum, quam elit condimentum lorem, posuere tempor neque lectus quis lacus. Phasellus mattis tempor tortor molestie ullamcorper. Aliquam erat volutpat.
-        </br>
-        Pellentesque pulvinar, enim at auctor tincidunt, velit nisi feugiat nisi, tincidunt auctor odio ipsum sit amet dolor. Praesent non urna quis justo laoreet vehicula vitae in nulla. Mauris purus lacus, vulputate vitae metus eu, porttitor mattis elit. Integer auctor vehicula dolor, sed rhoncus nulla semper vel. Suspendisse facilisis pellentesque nunc, nec feugiat tortor porttitor vitae. Sed aliquet auctor placerat. Aliquam ex libero, efficitur id volutpat ut, tempus in nisl. Donec nibh augue, iaculis sit amet accumsan non, faucibus ac tellus. Donec porttitor mauris eget venenatis vulputate.
-        </br>
-        Praesent commodo feugiat leo, et consequat erat tincidunt non. Morbi at mauris nec dui suscipit pretium sed et sem. Phasellus libero metus, vulputate non dolor eget, ullamcorper efficitur quam. Nulla maximus non orci eu blandit. Nulla a convallis dolor. Curabitur ac leo lectus. Mauris tempor, augue ut venenatis facilisis, sapien felis efficitur libero, nec laoreet nibh elit vel enim. Nullam eleifend libero ac eros hendrerit, eu egestas risus ullamcorper. Maecenas facilisis, sapien sed ullamcorper ultricies, nibh mi mattis dui, fringilla imperdiet sapien quam ac ante. Proin tortor velit, suscipit eu erat eget, euismod convallis turpis. Nam commodo lacinia lectus, vitae lobortis enim semper sit amet. Aliquam ac justo sit amet enim pretium maximus. Quisque id interdum tellus. Curabitur dictum lobortis consequat. Curabitur odio est, scelerisque a rutrum sit amet, pulvinar sed urna.
+    <div class="intro">
+        <div class="halfblock" style="background-color: beige; top: 100%; box-shadow: 0px -2.5px 2.5px darkslategray;"></div>
+        <div class="halfblock" style="background-color: lightsalmon; top: 150%;"></div>
+        <img src="assets/PP2.png" class="intro-logo">
+
+        <div class="intro-text">
+            border shows general size, prob will remove later
+        </div>
     </div>
 
-    <div class="out">
-    <table style="width:100%; height:100%;">
-    <tr>
-        <th onclick="document.location='testing.html'">Testing</th>
-        <th onclick="document.location='masks.html'">Masks</th>
-        <th onclick="document.location='longcovid.html'">Long Covid</th>
-        <th onclick="document.location='math.html'">Mathematical Modelling</th>
-    </tr>
-    </table>
+    <div class="navigation">
+        <table style="width:100%; height:100%;">
+        <tr>
+            <th onclick="document.location='testing.html'">Testing</th>
+            <th onclick="document.location='masks.html'">Masks</th>
+            <th onclick="document.location='longcovid.html'">Long Covid</th>
+            <th onclick="document.location='math.html'">Mathematical Modelling</th>
+        </tr>
+        </table>
     </div>
+
+    <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                $('.intro').css("opacity", $(window).scrollTop()/($(document).height()/2.5));
+            })
+        })
+    </script>
+
 </body>
+
 </html>
