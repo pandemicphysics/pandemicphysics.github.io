@@ -17,6 +17,13 @@ img {
     user-select: none;
 }
 
+div.updated {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    opacity: 0.2;
+}
+
 div.halfblock {
     position: absolute;
     left: 0px;
