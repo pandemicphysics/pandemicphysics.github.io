@@ -4,7 +4,7 @@
 <head>
     <title>Pandemic Physics - Testing</title>
 
-    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="testing.css">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -16,11 +16,134 @@
 
     <div class="text">
         <div class="sectionA">
-            <b>A. Lateral Flow Testing</b></br>
-            What is a Lateral Flow Test?A  lateral  flow  test  (LFT),  or  more  accurately,  a  lateralflow assay, is a test which aims to measure a target entityin some way – this can be its function, the amount of thesubstance present, or simply its presence [1]. The LFT usedin COVID-19 testing currently simply records the presenceof the virus,  hence why we observe either a positive or anegative result.  A LFT test is typically self-administered,as the person swabs the back of their own  </div>
+            <h2>A. Lateral Flow Testing</h2>
+            A lateral flow test (LFT), or more accurately, a lateral flow assay, is a test which aims to measure a target entity in some way – this can be its function, the amount of the substance present, or simply its presence [1]. The LFT used in COVID-19 testing currently simply records the presence of the virus, hence why we observe either a positive or a negative result. A LFT test is typically self-administered, as the person swabs the back of their own throat and nose. Lateral flow tests are by no means a new method of testing- they have been used in a range of capacities, from veterinary medicine to similar technology being used in common pregnancy tests.
+        </br></br><figure style="text-align:center"><img src="assets\Diagram of LFT.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Schematic showing the different sections of an LFT.[1]</figcaption></figure>
+            The test itself is constructed from a range of components:</br></br>
+            <div style="border-radius:5px; box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1); background-color:seashell; width:80%; display:block; margin-left:auto; margin-right:auto; padding: 5px;">
+                <b>Sample Pad</b>: The sample pad is where the liquid sample is placed and contains salts and proteins to help control the flow rate and make the sample suitable interact with other compounds in the test. However, in the widespread LFT testing used in the UK, some of these compounds are found in the small tube of buffer solution which the swab is swirled in before dropping this on the sample pad. These can be made of woven mesh or cellulose fibres, which need to have consistent absorbency, thickness and density so there is uniform wicking [2], the action of using capillary action to move liquids in narrow spaces.
+
+</br><b>Conjugate Release Pad</b>: This pad has the detector particles present and keeps them functional until the test strip is used. For example, they may be kept in a dehydrated sucrose or sugar, which then dissolves on the addition of a liquid sample. The detector particles used are typically antibodies which are joined to coloured particles [1].
+
+</br><b>Detection Zone/Membrane</b>: The detection zone is made of porous membrane material, allowing the sample to flow along it and interact with the compounds in the control and test lines. The choice of membrane needs to be carefully considered as this impacts the capillary flow rate, which in turn affects the time taken to produce a result and even the specificity and sensitivity [2](see PCR page for more information on sensitivity and specificity).
+
+</br><b>Test Line</b>: Here the sample reacts with the compound placed in the membrane and if a reaction occurs a coloured product is produced and the line indicating a ‘positive’ test result appears. If the viral particles are not present, no reaction occurs here and thus this sample is ‘negative’.
+
+</br><b>Control Line</b>: The control line is used to indicate proper liquid flow through the strip. All correctly obtained samples which have been combined with the buffer solution should react with this line, therefore it can be used to check that the strip is working, and that the test has been carried out correctly.
+
+</br><b>Adsorbent Pad/Wicking Pad</b>: Depending on the sample used, these either simply wick away excess liquid by absorbing it, or in some cases an adsorbent material is used, which allows the sample to adhere to the surface of the pad. Due to the use of these in mass testing, the COVID-19 LFTs simply use absorbent wicking pads.
+(Wicking: drawing off liquid by capillary action)
+
+</br><b>Backing Card/Casing</b>: The tests are mounted: this can simply be on a piece of card, however, when tests are in public circulation, plastic cases with printing on them are used. This then ensures the sample is placed on the correct part of the testing strip and aids qualitative readings of the results. These cases also ensure the tests remain level: the thickness of the backing needs to be consistent to avoid areas of compression or differences in levels which may affect fluid flow [2].
+</div></br>
+        <b>How does the fluid move along the strip?</b></br>
+
+The fluid flow along the strip in a lateral flow test occurs by capillary action. Capillary action arises when there is surface tension between the molecules of the liquid, and forces between the liquid and the adjacent substance [3] - so in this case, the sample pad, the wicking pad or within the membrane. These forces between the fluid molecules and the adjacent substance give rise to forces of adhesion, which simply leads to things clinging together when close [4]. These are opposed by forces of cohesion, which is the tendency for a liquid to remain as an assemblage of particles due to molecular forces between the liquid molecules. If the forces of adhesion are greater than those of cohesion, the liquid molecules ‘crowd’ towards the solid surface, which increases the area of contact between the liquid and the solid, causing it to spread along the solid surface [3]. This effect is also seen in how water seems to move ‘up’ a piece of kitchen towel.
+To consider this in an LFT, the capillary flow time is measured. This is the time taken for the sample liquid to travel and completely fill the membrane strip. For a bar shaped strip of porous material, such as the membrane in an LFT:
+</br>$$ V= AS \sqrt{t} $$</br>
+Where \(V\) is the cumulative volume of absorbed liquid, \(t\) is the time taken, \(A\) is the cross-sectional area and \(S\) is the sorptivity of the membrane [5]. Sorptivity is the measurement of the capacity of a medium to absorb or desorb water by capillarity and is usually a defined value for most materials. [6]</br>
+</br><iframe src="https://www.desmos.com/calculator/eicksjcejj?embed" width="500px" height="500px" style="border: 1px solid #ccc; display:block; margin-left:auto; margin-right:auto;box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1); border-radius:5px; width:50%;" frameborder=0></iframe>
+</br><b>How effective is the LFT?</b></br>
+
+There are several advantages and disadvantages to the use of LFT tests in the COVID-19 pandemic [3]:</br></br>
+
+<table>
+    <tr>
+        <th class="nohov"><b>Advantages<b></th>
+        <th class="nohov"><b>Disadvantages<b></th>
+    </tr>
+    <tr>
+        <td>Low Cost</td>
+        <td>Qualitative Readout</td>
+    </tr>
+    <tr>
+        <td>Technology already used and established</td>
+        <td>Subject to user error</td>
+    </tr>
+    <tr>
+        <td>Can be scaled up and used for mass testing</td>
+        <td>Can potentially produce an unclear situation</td>
+    </tr>
+    <tr>
+        <td>Simple, can be carried out by patient themselves</td>
+        <td>Can have impacts on sensitivity and specificity</td>
+    </tr>
+    <tr>
+        <td>Low sample volume</td>
+        <td></td>
+    </tr>
+</table></br>
+
+
+The advantages of the LFT are clear - it is substantially cheaper than the PCR tests, making it a good candidate for mass testing. It can even be used in the home- for example, those who are key workers may be given test kits to carry out prior to coming into work. Due to its qualitative readout, no specialist machinery or scientific knowledge is necessary to tell if it reads positive or negative.
+However, it does have its disadvantages. If you get a positive LFT result, you must get a PCR test to confirm that it is a COVID-19 case, as the LFT alone is insufficient to diagnose. Due to different users providing different swabs and adding varying amounts of the sample to the strip, it can vary in sensitivity and specificity (See PCR page for more information on the role of sensitivity and specificity in testing).</br>
+
+The qualitative readout that is greatly beneficial in creating a widespread testing method has some problems also: what if a faint positive line appears? It may be the case that someone has previously had COVID-19 and still has a very small viral load, but not so much as to be contagious, or that this is a false positive. Repeat testing may be carried out here, but as the output is solely qualitative, we cannot tell why there was a weak positive for a specific case.</br>
+
+Finally, a main issue with these tests is that people fail to administer them correctly. A Public Health England (PHE) survey tested LFT tests on laboratory scientists, trained healthcare-workers and self-trained members of the public and then compared them to PCR results where these were available. Notably, the survey found that 79.2\% of positive LFT tests were also PCR positive amongst the laboratory scientists, but only 57.5\% of positive LFT tests were also PCR positive within the general population [7]. Perhaps then, better education of how to carry out the swabbing and testing process is required to ensure mass testing is successful.</br>
+</br><figure style="text-align:center"><img src="assets\Graph LFT.PNG" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">[7]</figcaption></figure>
+        </div>
         <div class="sectionB">
-            <b>B. Polymerase Chain Reaction Testing</b></br>
-            The  Polymerase  Chain  Reaction  (PCR)  test  used  inCOVID-19 testing is actually a Reverse Transcription Poly-merase  Chain  Reaction  (RT-PCR)  or  a  real-time  ReverseTranscription Polymerase Chain Reaction (rRT-PCR). Thisis because the COVID-19 virus has extremely large, singlestranded RNA genomes [1], however the PCR test uses thepresence of DNA. The process of reverse transcription (RT)therefore allows for the PCR test to be used
+            <h2>B. Polymerase Chain Reaction Testing</h2>
+            <b>What is a PCR Test?</b>
+
+The Polymerase Chain Reaction (PCR) test used in COVID-19 testing is actually a Reverse Transcription Polymerase Chain Reaction (RT-PCR) or a real-time Reverse Transcription Polymerase Chain Reaction (rRT-PCR).  This is because the COVID-19 virus has extremely large, single stranded RNA genomes [1], however the PCR test uses the presence of DNA. The process of reverse transcription (RT) therefore allows for the PCR test to be used.</br>
+
+Reverse transcription is carried out by reaction with an enzyme, the reverse transcriptase, which generates the complementary DNA. This can then be used in the PCR test, which operates by cycling through different temperatures to heat and cool the mixture, which can then trigger specific chemical reactions that create identical copies of the target DNA. Each cycle approximately doubles the number of target DNA, and typically 35 cycles are carried out [2].</br>
+
+Fluorescent dyes are used as markers, and as new copies of the DNA are built these attach to the DNA strands and release the fluorescent dye, which is then measured by the machine’s computer. The amount of fluorescence after each cycle is tracked, and once a certain level of fluorescence is passed, it yields a positive test result. For rRT-PCR, the fluorescence is measured on the computer screen in real-time. The number of cycles required to surpass this limit is known as the cycle threshold, and the lower the cycle threshold, the higher the viral load [2].
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{RT-PCR diagram.png}\\
+\caption{Schematic showing the process of a RT-PCR. The probe contains the dyes used in testing and the primer is complementary sections of DNA that flank the area of interest. [3]}
+\vspace{-20px}
+\centering
+\end{figure}
+
+IMAGE HERE- IT'S FIG TWO ABOVE BUT LATEX MOVED IT
+
+\textbf{How do we assess the success of the PCR test? }
+
+In the media, we currently hear our leaders and politicians often refer to the ‘sensitivity’ and the ‘specificity’ of the tests. But what does this terminology actually mean?
+
+When a COVID-19 test is completed, there are 4 potential outcomes:
+
+True Positive (TP): The test result is positive, and the person has coronavirus.
+
+False Positive (FP): The test result is positive, and the person does not have coronavirus.
+
+True Negative (TN): The test result is negative, and the person does not have coronavirus.
+
+False Negative (FN): The test result is negative, and the person has coronavirus.
+
+The prevalence of these outcomes in a population is then used to determine the sensitivity and the specificity.
+
+The sensitivity is calculated as $\frac{TP}{FN+TP}$, or the number of true positives out of all those with the virus. For a perfect test, there would be no false negatives, and this would equal 1.
+The specificity is calculated as $\frac{TN}{TN+FP}$ or the number of true negatives out of all those without the virus. For a perfect test, there would be no false positives, and this would also equal 1.
+The precision is given by $\frac{TP}{TP+FP}$, or the total number of true positives out of all positives, and the accuracy by $\frac{TP+TN}{TP+TN+FP+FN}$, or the number of correct test results in the entire population.
+This is often portrayed using a receiver operating characteristic (ROC) graph, which plots sensitivity against 1- Specificity. These usually feature a line $y=x$ which denotes the outcome if the result was randomly guessed [4]. ROC CURVE IMAGE HERE
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{ROC Curve.png}\\
+\caption{Diagram of how to assess a test based on its ROC curve. [5]}
+\vspace{-20px}
+\centering
+\end{figure}
+
+To find out more about these concepts, and to see the impact the population size and test results can have, try this interactive Juypter notebook: LINK JUYPTER NOTEBOOK.
+
+
+\textbf{What are the advantages and disadvantages of the PCR test? }
+
+The PCR test is often seen as the ‘gold-standard’ in testing for coronavirus and is used as a confirmation of a positive from lateral flow testing. However, the PCR solely tests for the presence of the viral particles. It typically has a high specificity to detect the presence of RNA but has no means of suggesting if it is active or not.
+
+A positive test result simply will tell if the COVID-19 gene fragment is present- and this does not necessarily mean that the person will be infectious in the period the PCR test is taken. However, to establish whether a person will pass on the virus, the PCR positive sample needs to be injected into culture cells to see if the virus reproduces there [6]. Therefore, in the situation of a global pandemic, it is not sustainable for this to be carried out for every positive test. However, the inactive RNA degrades in the body slowly over time so, depending on the cycle threshold used in testing or the point at which the test is taken, it may still even be positive after infectiousness has dissipated.
+
+In England, it is now a legal requirement to self-isolate for 10 days following a positive PCR test result, even though there is a small probability that this may be a false positive or you may not be infectious to others. However, with the severity and new variants of the coronavirus, many suggest that this is for the benefit of the greater population - it is far more probable you will have the virus and be able to transmit it following a positive PCR result.
+
+There is also consideration as to how many PCR tests are necessary to rule out, or to be clinically sure, of COVID-19. It is interesting that the PCR test manufacturers typically note that it is to be used solely for ‘clinical reference’, in that the PCR alone should not be used on its own for clinical diagnosis. The PCR has been incredibly useful and responsible for lives saved during this pandemic, but too much focus on it may divert from other respiratory and pneumonia type illnesses. For example, in a case presented by Isikbay et al [7], a patient with COVID-like symptoms underwent multiple CT scans and 4 PCR tests who later responded to treatment for an e-cigarette and vaping associated lung injury, with the potential that this treatment was delayed due to fears that he had COVID-19. Whilst we can appreciate that the pandemic is clearly a prevalent fear in the mind of our clinicians, this paper suggests that we need to decide upon a number of negative PCR tests that should be required to rule out COVID-19.
+
+Overall, whilst further research and work on the PCR test is needed for clinical settings, we cannot fault its value in the current pandemic. The PCR test has been key in the UK testing system, and the technology used here has, quite literally, saved lives.
+
         </div>
     </div>
 
@@ -41,6 +164,7 @@
         </table>
 
     </div>
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

@@ -15,6 +15,14 @@ img {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    border-radius: 5px;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.banner {
@@ -91,4 +99,12 @@ div.sectionA {
 div.sectionB {
     background-color: deepskyblue;
     padding: 2% 3%
+}
+
+td {
+    text-align: center;
+}
+
+th.nohov:hover {
+    background-color: transparent;
 }
