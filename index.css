@@ -50,7 +50,8 @@ img.logo {
 }
 
 div.splash-text {
-    height: 33.33333333%;
+    text-align:center;
+    height 30%;
     width: 50%;
     padding: 15px 15px 25px 15px;
     border-radius: 15px;
