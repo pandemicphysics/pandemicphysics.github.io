@@ -80,7 +80,7 @@ However, it does have its disadvantages. If you get a positive LFT result, you m
 
 The qualitative readout that is greatly beneficial in creating a widespread testing method has some problems also: what if a faint positive line appears? It may be the case that someone has previously had COVID-19 and still has a very small viral load, but not so much as to be contagious, or that this is a false positive. Repeat testing may be carried out here, but as the output is solely qualitative, we cannot tell why there was a weak positive for a specific case.</br>
 
-Finally, a main issue with these tests is that people fail to administer them correctly. A Public Health England (PHE) survey tested LFT tests on laboratory scientists, trained healthcare-workers and self-trained members of the public and then compared them to PCR results where these were available. Notably, the survey found that 79.2\% of positive LFT tests were also PCR positive amongst the laboratory scientists, but only 57.5\% of positive LFT tests were also PCR positive within the general population [7]. Perhaps then, better education of how to carry out the swabbing and testing process is required to ensure mass testing is successful.</br>
+Finally, a main issue with these tests is that people fail to administer them correctly. A Public Health England (PHE) survey tested LFT tests on laboratory scientists, trained healthcare-workers and self-trained members of the public and then compared them to PCR results where these were available. Notably, the survey found that 79.2% of positive LFT tests were also PCR positive amongst the laboratory scientists, but only 57.5% of positive LFT tests were also PCR positive within the general population [7]. Perhaps then, better education of how to carry out the swabbing and testing process is required to ensure mass testing is successful.</br>
 <figure style="text-align:center"><img src="assets\Graph LFT.PNG" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Using the data from PHE [7], the lighter blue bar shows the number of LFT tests which returned positive results. The darker blue bar shows the number of cases that were COVID positive with PCR testing. Therefore, we can see how training to be able to carry out the LFT test properly is vital to its success rate.</figcaption></figure>
         </div>
         <div class="sectionB">
@@ -99,16 +99,9 @@ Fluorescent dyes are used as markers, and as new copies of the DNA are built the
 
 In the media, we currently hear our leaders and politicians often refer to the ‘sensitivity’ and the ‘specificity’ of the tests. But what does this terminology actually mean? </br>
 
-When a COVID-19 test is completed, there are 4 potential outcomes:</br></br>
+When a COVID-19 test is completed, there are 4 potential outcomes:</br>
 
-<div style="text-align:center">
-True Positive (TP): The test result is positive, and the person has coronavirus.</br>
-
-False Positive (FP): The test result is positive, and the person does not have coronavirus.</br>
-
-True Negative (TN): The test result is negative, and the person does not have coronavirus.</br>
-
-False Negative (FN): The test result is negative, and the person has coronavirus.</div></br>
+<figure style="text-align:center"><img src="assets\matrix.png" style="width:35%;"><figcaption style="opacity:0.5; font-size:12px;">Matrix showing the processes leading to the different outcomes in testing.</figcaption></figure>
 
 The prevalence of these outcomes in a population is then used to determine the sensitivity and the specificity.</br>
 
@@ -117,9 +110,6 @@ The specificity is calculated as \(\frac{TN}{TN+FP}\) or the number of true nega
 The precision is given by \(\frac{TP}{TP+FP}\), or the total number of true positives out of all positives, and the accuracy by \(\frac{TP+TN}{TP+TN+FP+FN}\), or the number of correct test results in the entire population.
 This is often portrayed using a receiver operating characteristic (ROC) graph, which plots sensitivity against 1- Specificity. These usually feature a line \(y=x\) which denotes the outcome if the result was randomly guessed [4].
 </br><figure style="text-align:center"><img src="assets\ROC Curve.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram of how to assess a test based on its ROC curve. [5]</figcaption></figure>
-
-To find out more about these concepts, and to see the impact the population size and test results can have, try this interactive Juypter notebook:</br> <h1>Juypter NOTEBOOK REMEMBER</h1>
-
 
 <b>What are the advantages and disadvantages of the PCR test?</b></br>
 
@@ -163,7 +153,7 @@ However, there are also issues with an increased use of CT scans: increased dema
 Research into the application of deep learning techniques to COVID-19 cases could help reduce the number of staff required in the process [9]. This can aid radiologists, reduce costs and lead to a faster decision to quarantine a patient. Here, a convolutional neural network (CNN) is trained to recognise the scans – this study used x-ray images - and thus predict the diagnosis. However, whilst early studies of this seem to have high sensitivity, precision and specificity, CNN models usually require vast amounts of data for training. Due to COVID-19 being a new virus, there is not a sufficiently large public data set of images yet- for example, studies currently have to take a set of images and manipulate them through rotation, noise addition and scaling to create a larger data set for training. However, with more information and images in the future, this method may become more prevalent in the current pandemic.
 <figure style="text-align:center"><img src="assets\CNN.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram of the process of training a CNN to detect COVID-19 cases from X-ray images. [9]</figcaption></figure>
 
-The scientific community is still pursuing innovation in its work during the pandemic, and the role of medical physics through scanning technologies, nanoparticle technologies and biophysics is invaluable in these efforts. The role of testing has been vital in the UK’s response to COVID-19 and is likely to remain as such, with an increasing prevalence of testing prior to travel and within schools. With the current work and evaluations of the medical physics community, testing will become an increasingly successful process in the future, helping us to discover even more about the virus and its impacts.  
+The scientific community is still pursuing innovation in its work during the pandemic, and the role of medical physics through scanning technologies, nanoparticle technologies and biophysics is invaluable in these efforts. The role of testing has been vital in the UK’s response to COVID-19 and is likely to remain as such, with an increasing prevalence of testing prior to travel and within schools. With the current work and evaluations of the medical physics community, testing will become an increasingly successful process in the future, helping us to discover even more about the virus and its impacts.
     </div>
     </div>
 
