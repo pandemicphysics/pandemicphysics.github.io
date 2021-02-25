@@ -1,6 +1,128 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <title>Pandemic Physics - Masks</title>
+
+    <link rel="stylesheet" href="masks.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+
 <body>
-    <a href="index.html">back</a>
+
+    <div class="text">
+        <div class="sectionA">
+            <h2>Mask Use for COVID</h2>
+            The COVID-19 pandemic has put the use of masks into the public spotlight. Contrary to large parts of East Asia, where masks were commonly used when ill, the UK had to react to COVID-19 without any meaningful prior societal use. Much has been reported about how effective masks are, the uptake of mask wearing and what type of mask is best to wear. How can a knowledge of physics help us understand what masks do and decide if compulsory mask wearing is a necessary course of action? Interestingly, common physical concepts such as Brownian motion, electromagnetism, Newtonian mechanics and our understanding of the exponential function are key in any such evaluation.
+        </div>
+        <div class="sectionB">
+            <h2>COVID-19 Transmission</h2>
+            <b>What is a PCR Test?</b></br>
+
+The Polymerase Chain Reaction (PCR) test used in COVID-19 testing is actually a Reverse Transcription Polymerase Chain Reaction (RT-PCR) or a real-time Reverse Transcription Polymerase Chain Reaction (rRT-PCR).  This is because the COVID-19 virus has extremely large, single stranded RNA genomes [1], however the PCR test uses the presence of DNA. The process of reverse transcription (RT) therefore allows for the PCR test to be used.</br>
+
+Reverse transcription is carried out by reaction with an enzyme, the reverse transcriptase, which generates the complementary DNA. This can then be used in the PCR test, which operates by cycling through different temperatures to heat and cool the mixture, which can then trigger specific chemical reactions that create identical copies of the target DNA. Each cycle approximately doubles the number of target DNA, and typically 35 cycles are carried out [2].</br>
+
+Fluorescent dyes are used as markers, and as new copies of the DNA are built these attach to the DNA strands and release the fluorescent dye, which is then measured by the machine’s computer. The amount of fluorescence after each cycle is tracked, and once a certain level of fluorescence is passed, it yields a positive test result. For rRT-PCR, the fluorescence is measured on the computer screen in real-time. The number of cycles required to surpass this limit is known as the cycle threshold, and the lower the cycle threshold, the higher the viral load [2].
+
+</br><figure style="text-align:center"><img src="assets\RT-PCR diagram.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Schematic showing the process of a RT-PCR. The probe contains the dyes used in testing and the primer is complementary sections of DNA that flank the area of interest. [3]</figcaption></figure>
+
+<b>How do we assess the success of the PCR test?</b></br>
+
+In the media, we currently hear our leaders and politicians often refer to the ‘sensitivity’ and the ‘specificity’ of the tests. But what does this terminology actually mean? </br>
+
+When a COVID-19 test is completed, there are 4 potential outcomes:</br></br>
+
+<div style="text-align:center">
+True Positive (TP): The test result is positive, and the person has coronavirus.</br>
+
+False Positive (FP): The test result is positive, and the person does not have coronavirus.</br>
+
+True Negative (TN): The test result is negative, and the person does not have coronavirus.</br>
+
+False Negative (FN): The test result is negative, and the person has coronavirus.</div></br>
+
+The prevalence of these outcomes in a population is then used to determine the sensitivity and the specificity.</br>
+
+The sensitivity is calculated as \(\frac{TP}{FN+TP}\), or the number of true positives out of all those with the virus. For a perfect test, there would be no false negatives, and this would equal 1.
+The specificity is calculated as \(\frac{TN}{TN+FP}\) or the number of true negatives out of all those without the virus. For a perfect test, there would be no false positives, and this would also equal 1.
+The precision is given by \(\frac{TP}{TP+FP}\), or the total number of true positives out of all positives, and the accuracy by \(\frac{TP+TN}{TP+TN+FP+FN}\), or the number of correct test results in the entire population.
+This is often portrayed using a receiver operating characteristic (ROC) graph, which plots sensitivity against 1- Specificity. These usually feature a line \(y=x\) which denotes the outcome if the result was randomly guessed [4].
+</br><figure style="text-align:center"><img src="assets\ROC Curve.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram of how to assess a test based on its ROC curve. [5]</figcaption></figure>
+
+To find out more about these concepts, and to see the impact the population size and test results can have, try this interactive Juypter notebook:</br> <h1>Juypter NOTEBOOK REMEMBER</h1>
+
+
+<b>What are the advantages and disadvantages of the PCR test?</b></br>
+
+The PCR test is often seen as the ‘gold-standard’ in testing for coronavirus and is used as a confirmation of a positive from lateral flow testing. However, the PCR solely tests for the presence of the viral particles. It typically has a high specificity to detect the presence of RNA but has no means of suggesting if it is active or not.</br>
+
+A positive test result simply will tell if the COVID-19 gene fragment is present- and this does not necessarily mean that the person will be infectious in the period the PCR test is taken. However, to establish whether a person will pass on the virus, the PCR positive sample needs to be injected into culture cells to see if the virus reproduces there [6]. Therefore, in the situation of a global pandemic, it is not sustainable for this to be carried out for every positive test. However, the inactive RNA degrades in the body slowly over time so, depending on the cycle threshold used in testing or the point at which the test is taken, it may still even be positive after infectiousness has dissipated. </br>
+
+In England, it is now a legal requirement to self-isolate for 10 days following a positive PCR test result, even though there is a small probability that this may be a false positive or you may not be infectious to others. However, with the severity and new variants of the coronavirus, many suggest that this is for the benefit of the greater population - it is far more probable you will have the virus and be able to transmit it following a positive PCR result. </br>
+
+There is also consideration as to how many PCR tests are necessary to rule out, or to be clinically sure, of COVID-19. It is interesting that the PCR test manufacturers typically note that it is to be used solely for ‘clinical reference’, in that the PCR alone should not be used on its own for clinical diagnosis. The PCR has been incredibly useful and responsible for lives saved during this pandemic, but too much focus on it may divert from other respiratory and pneumonia type illnesses. For example, in a case presented by Isikbay et al [7], a patient with COVID-like symptoms underwent multiple CT scans and 4 PCR tests who later responded to treatment for an e-cigarette and vaping associated lung injury, with the potential that this treatment was delayed due to fears that he had COVID-19. Whilst we can appreciate that the pandemic is clearly a prevalent fear in the mind of our clinicians, this paper suggests that we need to decide upon a number of negative PCR tests that should be required to rule out COVID-19.</br>
+
+Overall, whilst further research and work on the PCR test is needed for clinical settings, we cannot fault its value in the current pandemic. The PCR test has been key in the UK testing system, and the technology used here has, quite literally, saved lives.
+
+        </div>
+
+    <div class="sectionA">
+        <h2>The Future of Testing</h2>
+        Whilst the LFT and PCR tests are currently the two most common types of COVID-19 testing currently used, there is an abundance of exciting research going to into methods which could potentially be useful in the future or in different settings.</br>
+    </br><b>How can we innovate the lateral flow test?</b></br>
+
+A major shortcoming of the LFT is its purely qualitative readout- it gives no indication of the viral load, making weak positives problematic (see LFT page for more information). Some exciting nanoparticle research may provide us with an answer: Ventura et al [1] have suggested a colorimetric solution. Interactions between the COVID-19 viral particle and gold nanoparticles, along with a colorimetric biosensor creates a surface layer which then becomes red shifted. The optical densities, or the absorbance of the mixed solution is the considered quantitatively, but for high viral loads, the shift can be visible even by the naked eye.</br>
+
+This process is governed by localized surface plasmon resonance (SPR). A plasmon is the quanta of plasma oscillations, like the relationship between phonons and mechanical oscillations. SPR occurs when plane-polarised light hits a thin metal film- or in this case, gold nanoparticles- under the conditions for total internal reflection. Here, the gold nanoparticles are often smaller than the wavelength of the incident light. When the energy of the incoming photons from the light is correct, it can interact with the free electrons in the metal surface. This energy is transferred to the electrons, which then convert into surface plasmons. SPR therefore occurs when the momentum of the incoming light photons is equal to that of the plasmons. By adding a binding biosensor to the surface, a change in the refractive index is seen, thus resulting in changes to the wavelengths absorbed and the optical density [2].
+</br><figure style="text-align:center"><img src="assets\Surface-Plasmon-Resonance-of-gold-nanoparticles.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram showing gold nanoparticles interacting with an electromagnetic wave in localized SPR.[3]</figcaption></figure>
+
+This new lateral flow test offers both high sensitivity and performance: its ROC curve gives a value of 0.98. (see PCR page for more information on ROCs and sensitivity). The biosensor also allows us to quantify the viral load as well as establishing a test result, and by choosing a biosensor which only detects active viral particles, the actual degree of ineffectiveness of a specimen can be established. However, it does require a quantitative read-out and more equipment than the current LFT, so more trained professionals would be required to carry out this kind of testing on a large scale.</br>
+
+</br><b>What are some new means of testing in a clinical setting?</b></br>
+
+Whilst PCRs continue to be used in a clinical setting, there is an increase in research into the role of x-rays and computed tomography (CT) scanning in diagnosis.
+</br></br>
+<iframe src="https://www.youtube.com/embed/pIQD8jdmaVM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen height="400px" style="border: 1px solid #ccc; display:block; margin-left:auto; margin-right:auto;box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1); border-radius:5px; width:50%;" frameborder=0></iframe>
+</br>
+A chest CT has previously been used for the diagnosis of pneumonia and it is suggested that this can be used to also diagnosis COVID-19. These scans are then assessed for ground glass opacities, lobar location and the pattern of the lesions, and studies have suggested that ground glass opacities tend to be the most common for COVID-19 patients [5].</br>
+<figure style="text-align:center"><img src="assets\normallungCT.jpg" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">CT scan of a healthy set of lungs [6]. Small lung nodules are typical and are usually a benign growth on the lung.</figcaption></figure>
+<figure style="text-align:center"><img src="assets\covidCT.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">CT scan of the lungs of COVID-19 patients.[7] The red arrows point to (a) Ground-glass opacities, (b) consolidations, (c) consolidations with ground-glass opacities, (d) solid nodules. Ground glass opacities arise from fluid in the lungs, and consolidations arise when the space in the lung typically occupied by air is filled with some other substance or fluid.</figcaption></figure>
+
+Whilst it is unlikely that the use of imaging will stop the need for PCR tests, they do provide a number of advantages. PCR tests are currently not available in large parts of the global south, or in countries that are suffering from shortages of PCR testing equipment but both may have some rudimentary X-ray technology, which can be used to identify lung opacities. The imaging process is also quicker than the several hours required to complete a PCR test and has the potential to be useful in a clinical setting- a CT scan could suggest a potential COVID case which is then confirmed by a PCR.</br>
+
+However, there are also issues with an increased use of CT scans: increased demand can lead to higher costs and there is a transmission risk associated with bringing someone in for a scan- the entire room would have to be decontaminated following every scan, which can take between 30 minutes and an hour with hospital cleaning methods. An increase in radiology staff may also be necessary, and as a result of this the current suggestion is that CT should only be used in emergency cases. [8]
+</br>
+Research into the application of deep learning techniques to COVID-19 cases could help reduce the number of staff required in the process [9]. This can aid radiologists, reduce costs and lead to a faster decision to quarantine a patient. Here, a convolutional neural network (CNN) is trained to recognise the scans – this study used x-ray images - and thus predict the diagnosis. However, whilst early studies of this seem to have high sensitivity, precision and specificity, CNN models usually require vast amounts of data for training. Due to COVID-19 being a new virus, there is not a sufficiently large public data set of images yet- for example, studies currently have to take a set of images and manipulate them through rotation, noise addition and scaling to create a larger data set for training. However, with more information and images in the future, this method may become more prevalent in the current pandemic.
+<figure style="text-align:center"><img src="assets\CNN.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram of the process of training a CNN to detect COVID-19 cases from X-ray images. [9]</figcaption></figure>
+
+The scientific community is still pursuing innovation in its work during the pandemic, and the role of medical physics through scanning technologies, nanoparticle technologies and biophysics is invaluable in these efforts.
+
+    </div>
+    </div>
+
+    <div class="title">
+        Testing
+    </div>
+
+
+    <div class="banner">
+        <table style="width:100%; height:100%;">
+        <tr>
+            <th onclick="document.location='index.html'" style="width:6.25%"><img src="assets\PP2.png" class="logo"></th>
+            <th onclick="document.location='testing.html'">Testing</th>
+            <th onclick="document.location='masks.html'">Masks</th>
+            <th onclick="document.location='longcovid.html'">Long Covid</th>
+            <th onclick="document.location='math.html'">Mathematical Modelling</th>
+        </tr>
+        </table>
+
+    </div>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>

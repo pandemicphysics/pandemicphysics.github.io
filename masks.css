@@ -1,0 +1,110 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+
+    overflow: auto;
+}
+
+img {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    border-radius: 5px;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.banner {
+    position: fixed;
+    bottom: 0;
+
+    width: 100%;
+    height: 10%;
+
+    background-color: lightsalmon;
+
+    box-shadow: 0px -2.5px 2.5px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    margin: 0;
+
+    text-align: center;
+    font-size: 3vh;
+}
+
+.logo {
+    position: fixed;
+    bottom: 1.25%;
+    left: 1.25%;
+
+    height: 7.5%
+}
+
+th {
+    font-weight: normal;
+    margin: 0;
+    width: 23.4375%;
+    padding-top: 0;
+    padding-bottom: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+th:hover {
+    background-color: darksalmon;
+}
+
+div.title {
+    position: absolute;
+
+    background: springgreen;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+
+    height: 10%;
+    width: 100%;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 8vh;
+}
+
+div.text {
+    position:absolute;
+    top:10%;
+    bottom:10%;
+
+    width: 100%;
+    overflow: auto
+}
+
+div.sectionA {
+    background-color:palegreen;
+    padding: 2% 3%
+}
+
+div.sectionB {
+    background-color: lightgreen;
+    padding: 2% 3%
+}
+
+td {
+    text-align: center;
+}
+
+th.nohov:hover {
+    background-color: transparent;
+}
