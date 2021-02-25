@@ -46,7 +46,7 @@
             \begin{equation}
                 \frac{\text{d}R}{\text{d}t} = \int_{0}^{\infty}\gamma(a)I(a,t)\text{d}a
             \end{equation}
-            As you can see, this is rather complicated as depends on \(a\), age. If we instead assume that the rate of recovery and transmisison are constant for all ages we reach the simplified SIR Model (N is the total population):
+            As you can see, this is rather complicated as depends on \(a\), age. If we instead assume that the rate of recovery and transmisison are constant for all ages we reach the simplified SIR Model[5] (N is the total population):
             \begin{equation}
     \frac{\text{d}S}{\text{d}t} = -\frac{\beta I S}{N}
 \end{equation}
@@ -65,7 +65,7 @@
 
 
 As it can be more helpful to monitor the rate at which a disease spreads and grows rather than the size of each compartment, the ratio known as the <b>basic reproduction number</b> - \(R_0\ = \frac{\beta}{\gamma}\) - is often used in place of the transition rates. This can be simply thought of as the average number of new infections arising from one infected individual.
-<figure style="text-align:center"><img src="assets\Diagram_Ro_Final_Deliverable-fullsize.webp" style="width:40%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">A simple visualisation of how \(R_0\) relates to infectivity.</figcaption></figure>
+<figure style="text-align:center"><img src="assets\Diagram_Ro_Final_Deliverable-fullsize.webp" style="width:40%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">A simple visualisation of how \(R_0\) relates to infectivity.[7]</figcaption></figure>
 <figure style="text-align:center"><img src="assets\r_0.svg" style="width:80%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">The evolution of a population of 1000 with 100 infected with different \(R_0\) values - "flattening the curve"?</figcaption></figure>
 
         </div>
@@ -74,7 +74,7 @@ As it can be more helpful to monitor the rate at which a disease spreads and gro
             <figure style="text-align:center"><img src="assets\vitalflows.svg" style="width:60%;  background-color:transparent; box-shadow:0px 0px transparent"><figcaption style="opacity:0.5; font-size:12px;">Including births and deaths in our compartmental flows.</figcaption></figure>
 
             So far we have ignored what we can describe as vital dynamics (or demography) - births and deaths within the population. This is valid for epidemics such as influenza, where infection and recovery take place at a much faster rate than births and deaths, and where mortality from the disease itself is low.
-            However, looking at the Ebola virus or COVID-19 where lethality is a concern, it is important that our models include this.
+            However, looking at the Ebola virus or COVID-19 where lethality is a concern, it is important that our models include this[5].
 
             \begin{equation}
                 \frac{\text{d}S}{\text{d}t} = \mu N - \nu S -\frac{\beta I S}{N}
@@ -93,15 +93,15 @@ As it can be more helpful to monitor the rate at which a disease spreads and gro
         </div>
         <div class="sectionB">
             <h2>SEIR and SEIRS Models</h2>
-            While we have many simplifications in order to model something as complicated as disease spread, we can choose to introduce different behaviours into our model to account for the specific disease/pandemic we are looking at.
+            While we have many simplifications in order to model something as complicated as disease spread, we can choose to introduce different behaviours into our model to account for the specific disease/pandemic we are looking at[5].
             <figure style="text-align:center"><img src="assets/seir.svg" style="width:80%;  background-color:transparent; box-shadow:0px 0px transparent"><figcaption style="opacity:0.5; font-size:12px;">Added <b>E</b>xposed compartment (with vital dynamics excluded).</figcaption></figure>
-            In many diseases where the incubation period is significant, as is the case for COVID-19, we may choose to include a fourth <b>E</b>xposed compartment. It is assumed that those in this compartment are not infectious; for the majority of the incubation period of COVID-19[maybe needs source?] this is true. This helps us understand how a population may contain many carriers even if many do not yet show symptoms.
-            Until now, we have also assumed that those recovered are no longer infectious but in the case of COVID-19 there have been a handful of reported cases of people showing symptoms many months after recovery[source? maybe]. We can incorporate this phenomena into our model by introducing a flow from <b>R</b>ecovered to <b>S</b>ucecptible.
+            In many diseases where the incubation period is significant, as is the case for COVID-19, we may choose to include a fourth <b>E</b>xposed compartment. It is assumed that those in this compartment are not infectious; for the majority of the incubation period of COVID-19[8] this is true. This helps us understand how a population may contain many carriers even if many do not yet show symptoms.
+            Until now, we have also assumed that those recovered are no longer infectious but in the case of COVID-19 there have been a handful of reported cases of people showing symptoms many months after recovery[9]. We can incorporate this phenomena into our model by introducing a flow from <b>R</b>ecovered to <b>S</b>ucecptible.
         </div>
         <div class="sectionA">
             <h2>Science Communications and COVID-19 Statistics</h2>
             The role of statistical modelling is clearly of great help in managing government strategy and is used widely in the media- most notably within UK government briefings. Here, statistics and data representation are digested by the general public, guiding many of us in our political opinions and criticism of the government response. We must consider how COVID-19 data is presented to and interpreted by the wider population.
-        </br></br><b>How are statistics used in public information about COVID-19?</b>
+        </br></br><b>How are statistics used in public information about COVID-19?</b></br>
         Graphs and data models have become a key element of COVID-19 information, whether it be the regular public health social media posts or in the frequent government briefings. From the beginning of the pandemic, statistical predictions were used in communications and in lockdown decisions.
 </br>
 Graphs with predictive content have been used, and the Office for National Statistic has been an integral part of producing the data. As statistician David Spiegelhalter writes, “One lesson this pandemic has driven home to me is the unbelievable importance of the statistics” [1]. Good statistics have been critical in our understanding and in strategy, and as a result they have become increasingly used by the public and in communication.
@@ -117,7 +117,7 @@ The aesthetic choices also are important: for example, some maps have used brown
 Similarly, technological considerations are important. Layouts are pushed right to the slide margins, meaning that information could easily be cut off. This also suggests that the government appears to be designing content for viewing on large TV screens, rather than streaming on phones or catching up on social media, where margins are more likely to be cropped to fit a frame. This may also be problematic as it could lead to the ‘small print’ data clarifications often found at the bottom of these slides being cut off an image.
 </br>
 Overall, however, it is amazing how quickly our statisticians came to produce these models and our means of presenting this are quickly evolving.
-</br></br><b>What innovative measures are being used to represent COVID-19 data?</b>
+</br></br><b>What innovative measures are being used to represent COVID-19 data?</b></br>
 Alongside the graphs we see in news briefings there are a number of ‘COVID -19 Dashboards’ such as the UK Summary [4]. This provides an easy-to-read version and interactive map components.
 </br>
 A dashboard created by John Hopkins University gives a world picture of cases [5]. This is a dynamic and interactive dashboard, with a creative approach that uses open source code for continuous adaptation and improvement. It also had a mobile version.
@@ -129,12 +129,57 @@ From posts like this to the complexity of the statistics used, our communication
 </br>Worldwide, academic research has massively focused on COVID-19 research- around 4% of all papers according to some databases [1]. However, whilst increased societal engagement with general scientific research must be encouraged, there have been many examples of poor quality research being pushed to the spotlight or misinterpretation of academic research.
 </br>
 Perhaps the most infamous example being former US President, Donald Trump, highly public interest in the use of Hydroxychloroquine as a COVID-19 treatment [2]. Here, one poorly managed observational study suggested a treatment plan which, even itself stated that its findings “should be interpreted with some caution and should not be applied to patients treated outside of hospital settings.” [3], but still saw widespread reference and use. In fact, 24 journal papers on COVID-19 were retracted before December 2020 [2]. Retractions of journal papers typically take years but here the intense focus on any new research saw increased scrutiny. With a recent Netflix series, Gwyneth Paltrow, founder of "Goop", is another example of the 	spread of COVID-19 misinformation. Recommendations for treatment "Long COVID" include 	intuitive fasting and use of infrared saunas [3]. Whilst promptly denounced by the head of 	the NHS [3], these pseudoscientific treatments make headline news worldwide with no 		evidence base.
-</br></br><img src="assets\goop.png"></br>
+</br><figure style="text-align:Center"><img src="assets\goop.png" style="width:50%"><figcaption style="opacity:0.5; font-size:12px;">Gwenyth Paltrow's "treatments" reaching national news - The Guardian</figcaption></figure>
 The tabloid media reporting dubious headlines related to new scientific papers is nothing new- usually a retraction is offered a few weeks later, as either the study was taken out of context or the scientist or paper is discredited. Reporting on COVID-19 has been particularly unsuitable to this framework of news due to inherent uncertainty of early scientific investigation. Many publications have been reported on and widely read in their pre-peer review status- intentionally made available early for discussion by research specialists. New evidence concerning any field will sometimes be disproven later on, so caution should always be taken when communicating research to the general public.
 </br>
 The approach physics takes in research and in testing theories is highly relevant here. Tabloid headlines and non-expert opinions espoused on social media account for much of the public distrust of government actions concerning COVID-19. Encouraging engagement with physics should also include familiarising people with how a typical academic article is structured, emphasising that a discussion of the results within a paper usually reveals the weight of any headline claims.
         </div>
+        <div class="sectionB">
+            <span style="opacity:0.5">
+                <h3>Bibliography</h3>
+                <b>COMPARTMENTAL MODELS</b>
+            </br>
+    [1] Coggon, Rose and Barker, What is epidemiology?, https://www.bmj.com/about-bmj/resources-readers/publications/epidemiology-uninitiated/1-what-epidemiology
+</br>
+    [2] Pappas, Kiriaze and Falagas, Insights into infectious disease in the era of Hippocrates, https://www.sciencedirect.com/science/article/pii/S1201971207002123 (2007)
+</br>
+    [3] https://www.ncbi.nlm.nih.gov/books/NBK24649/ , https://www.rcpe.ac.uk/heritage/history-germ-theory-college-collections
+</br>
+    [4] Monteilh, Epidemiological Modelling: 1760, Bernoulli and Smallpox, https://petiteshistoiresdessciences.com/2020/04/17/1760-bernoulli-et-la-variole-la-modelisation-epidemiologique-1ere-partie/
+</br>
+    [5] Kermack and McKendrick, A Contribution to the Mathematical Theory of Epidemics, https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.1927.0118
+</br>
+    [6] IDM, SEIR and SEIRS Models, https://docs.idmod.org/projects/emod-hiv/en/latest/model-seir.html
+</br>
+    [7] Biggers and Ramirez, What is R0? Gauging Contagious Infections, https://www.healthline.com/health/r-nought-reproduction-number
+</br>
+    [8]World Health Organisation, Coronavirus disease 2019 (COVID-19) Situation Report – 73, 02 April 2020, https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200402-sitrep-73-covid-19.pdf
+</br>
+    [9]Various authors, Genomic evidence for reinfection with SARS-CoV-2: a case study, JANUARY 01, 2021, HTTPS://WWW.THELANCET.COM/JOURNALS/LANINF/ARTICLE/PIIS1473-3099(20)30764-7/FULLTEXT#%20
+</br></br><b>SCIENCE COMMUNICATIONS AND COVID-19 STATISTICS REFERENCES </b></br>
+[1] Harford, Tim, Statistics, lies and the virus: Tim Harford’s five lessons from a pandemic,  https://www.ft.com/content/92f64ea9-3378-4ffe-9fff-318ed8e3245e. Accessed 12/02/21. (2020)
+</br>
+[2] Boseley, Sarah, Statistics watchdog: ministers still misleading public on coronavirus tests, https://www.theguardian.com/world/2020/jun/02/statistics-watchdog-ministers-still-misleading-public-on-coronavirus-test. Acessed 13/02/21. (2020)
+</br>
+[3] Chesire, James, Analysis: data visualisation expert on what’s wrong with the UK Government’s coronavirus charts, https://www.ucl.ac.uk/news/2020/nov/analysis-data-visualisation-expert-whats-wrong-uk-governments-coronavirus-charts. Accessed 13/02/21. (2020)
+</br>
+[4] UK COVID-19 Summary, https://coronavirus.data.gov.uk/. Accessed 13/02/21
+</br>
+[5]COVID-19 Dashboard by the Center for Systems Science and Engineering (CSSE) at John Hopkins University, https://coronavirus.jhu.edu/map.html. Accessed 13/02/21.
+</br>
+[6] Campbell, Hank, #Catteningthecurve To Create Coronavirus Transmission Prevention Awareness, https://www.science20.com/content/catteningthecurve_to_create_coronavirus_transmission_prevention_awareness. Accessed 13/02/21. (2020)
+</br></br><b>ENGAGMENT WITH ACADEMIA RESEARCH REFERENCES</b>
+</br
+[1] Nature journal, How a torrent of COVID science changed research publishing — in seven charts, 17 December 2020, https://www.nature.com/articles/d41586-020-03564-y#correction-0
+</br>
+[2] Josh Bloom, American council on science and health, Hydroxychloroquine Is Dead And Buried. So, Let's Dig It Up And Bury It Again. , 23 July 2020 https://www.acsh.org/news/2020/07/23/hydroxychloroquine-dead-and-buried-so-lets-dig-it-and-bury-it-again-14924
+</br>
+[3] Matthew Weaver, 24 Febuary 2021, NHS warns against Gwyneth Paltrow’s 'kombucha and kimchi' Covid advice, https://www.theguardian.com/film/2021/feb/24/gwyneth-paltrows-covid-advice-challenged-nhs-england-director
+            </span>
+        </div>
     </div>
+
+
 
     <div class="title">
         Mathematical Modelling
@@ -147,7 +192,7 @@ The approach physics takes in research and in testing theories is highly relevan
             <th onclick="document.location='index.html'" style="width:6.25%"><img src="assets\PP2.png" class="logo"></th>
             <th onclick="document.location='testing.html'">Testing</th>
             <th onclick="document.location='masks.html'">Masks</th>
-            <th onclick="document.location='longcovid.html'">Long Covid</th>
+            <th onclick="document.location='neurophysics.html'">Neurophysics</th>
             <th onclick="document.location='math.html'">Mathematical Modelling</th>
         </tr>
         </table>
