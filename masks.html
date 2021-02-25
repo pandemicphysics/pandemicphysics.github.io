@@ -37,10 +37,10 @@ The medium sized particles are identified as the hardest for masks to create a b
 
 </br>
 The smallest particles are light enough to interact with air molecules so will collide many times on very short time scales, hence following "Brownian motion", where the path of the particle is random. The collisions with the air molecules can leave these particles airborne nearly indefinitely [3].
-</br></br><video autoplay muted loop>
+</br><figure style="text-align:center"><video autoplay muted loop>
     <source src="assets\Brownian motion video.mp4" type="video/mp4">
 Video not support by your browser :(
-</video></br>
+</video><figcaption style="opacity:0.5; font-size:12px;">Visualising Brownian motion, with and without visible air particles </figcaption></figure>
 This short animation shows a simplified example of Brownian motion. We have our "air" particles in red and our "COVID-19" particle in the centre. The vectors show how collisions, highlighted using yellow explosions, change the trajectory. For half of the animation we see the air particles and for the other half we focus only on the motion of our COVID-19 particle. It is clear that the COVID-19 particle cannot efficiently travel in a certain direction and passes through the same points many times. In reality there would be many hundreds of collisions each second, making it very difficult for the COVID-19 particle to displace itself from a prescribed origin. We can describe the displacement from the origin mathematically using the Weiner process and produce a distribution to show us where the COVID-19 particle is most likely to be. Instead of giving a proof of what distribution Brownian motion follows, a simple python code of the Weiner process, or "random walk" function, is used.
 </br><figure style="text-align:center"><img src="assets\50 counts.png" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">50 random walks over 400 steps</figcaption></figure>
 <figure style="text-align:center"><img src="assets\150 counts.png" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">150 random walks over 400 steps</figcaption></figure>
@@ -57,7 +57,7 @@ Here we begin with a model of how a basic mask tackles this problem. The physica
     E_{d_{1}-d_{2}}=\frac{F_{behind}}{F_{infront}}\times100\%
 \end{equation}
 The efficiency will tell us how good the mask is at blocking droplets but it can also be measured over various size ranges of droplet, $d_{1}-d_{2}$, as each diameter range presents a different challenge.
-</br><figure style="text-align:center"><img src="assets\filtration techniques.jpg" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Schematic showing filtration techniques of masks, not to scale [1].</figcaption></figure>
+</br><figure style="text-align:center"><img src="assets\filtration techniques.jpg" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Schematic representing filtration techniques of masks [1]</figcaption></figure>
 
 
 <b>Gravity sedimentation</b>: For the very largest regime of particles, $>1\mu m$, gravity and inertial forces are the dominating force in their trajectory. We understand that any droplets that make it to the mask fibres do not follow the air flow but essentially travel downwards. Cotton fibres have a thickness of $8\mu m-20\mu m$ [2] which is comparable to this largest regime, suggesting that collisions with droplets will be extremely likely.
@@ -69,7 +69,7 @@ The efficiency will tell us how good the mask is at blocking droplets but it can
 <b>Diffusion</b>: The smallest regime of droplet ,$&lt;0.3\mu m$, follows Brownian motion. Due to the random nature of the droplet path, capture is highly likely. If each layer of fibres has a small chance to capture the small droplet, the Brownian motion means that each droplet will go back and forth between fibres, increasing the likelihood of capture. Here we emphasise that initial intuitive thoughts that the smallest particles may be the hardest to filter are wrong. We must also note that the smallest particles are not only captured through chance of hitting a fibre- instead, masks make use of electrostatic attraction.
 </br>
 <b>Electrostatic attraction</b>: This is a method of filtration that isn't used in common masks but is made use of in medical grade masks. The fibres are very slightly electrically charged, inducing an electric charge in the nearby droplets, hence exerting a force on the droplet towards the fibres.
-</br><figure style="text-align:center"><img src="assets\newelectro.jpg" style="width:20%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Diagram displaying electrostatic forces, not to scale.</figcaption></figure>
+</br><figure style="text-align:center"><img src="assets\newelectro.jpg" style="width:20%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Diagram representing electrostatic forces, not to scale</figcaption></figure>
 
 
 We must realise that the electrostatic force is actually fairly weak and is therefore only effective when the droplets are in the smallest regime, moving slowly and nearby the fibre. Electrostatic attraction works well with diffusion- whilst slightly larger droplets may only be slightly deflected by the charged fibres, droplets colliding with air molecules will be will pass by the fibres many times. This hugely increases the chance of capture,
@@ -96,7 +96,9 @@ This type of mask can be used in a hospital setting very successfully as long as
     <div class="sectionA">
         <h2>Conclusions</h2>
         Mask wearing is particularly relevant in the COVID-19 pandemic due to the high numbers of asymptomatic carriers and an incubation period of a few days before symptoms present themselves. The UK's mask uptake is low compared to similar European countries and has also had an extremely high number of deaths for its population so it is clearly an area in which a renewed public health campaign would be useful.
-One particular issue in the UK could be the communication of government regulations- for instance, $20\%$ of adults believed face masks to be compulsory in shops in England, prior to the July 24th 2020 announcement for mask wearing to become compulsory in shops for the first time [1]. Another issue, not just present in the UK, is the significant number of men refusing to wear masks. A study conducted by Middlesex University London found that men were nearly twice as likely to strongly disagree with the statement that they "intend to wear a mask outside their home" [2]. The same study found that the reasoning behind this was that masks are "shameful, not cool and a sign of weakness". Clearly, not every society and not everyone in society has the same view of masks. It is the government's responsibility to promote the use of masks- with such solid scientific evidence that masks reduce the spread of COVID-19 this should not be a contentious issue.  
+One particular issue in the UK could be the communication of government regulations- for instance, $20\%$ of adults believed face masks to be compulsory in shops in England, prior to the July 24th 2020 announcement for mask wearing to become compulsory in shops for the first time [1]. Another issue, not just present in the UK, is the significant number of men refusing to wear masks. A study conducted by Middlesex University London found that men were nearly twice as likely to strongly disagree with the statement that they "intend to wear a mask outside their home" [2]. The same study found that the reasoning behind this was that masks are "shameful, not cool and a sign of weakness". Clearly, not every society and not everyone in society has the same view of masks. It is the government's responsibility to promote the use of masks- with such solid scientific evidence that masks reduce the spread of COVID-19 this should not be a contentious issue.
+If, however, you remain unconvinced of the effectiveness of a simple cloth mask you may agree that with more people wearing them, more social responsibility will be shown.
+</br></br><img src="assets\homemade_masks.png">
     </div>
     </div>
 

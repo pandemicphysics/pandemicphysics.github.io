@@ -5,6 +5,8 @@ body {
     background-color: beige;
 
     overflow: auto;
+    line-height: 1.5;
+    font-size: 14px;
 }
 
 img {
