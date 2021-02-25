@@ -1,6 +1,159 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <title>Pandemic Physics - Mathematical Modelling</title>
+
+    <link rel="stylesheet" href="math.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+</head>
+
 <body>
-    <a href="index.html">back</a>
+
+    <div class="text">
+        <div class="sectionA">
+            <h2>Epidemiology</h2>
+            As infectious diseases have evolved over time, so has our ability to understand them and subsequently mitigate (or at least attempt to) their effects. So, what separates modern pandemics – such as COVID-19 and HIV/AIDS – from more historical ones like the Black Death? One could argue that the emergence of <b>epidemiology</b>[1] - <i>the study and analysis of the distribution (who, when, and where), patterns and determinants of health and disease conditions in defined populations</i> - as a science stands above all other advancements. Like many other disciplines, its roots can be found in ancient Greece, with Hippocrates[2] the so-called <i>"father of medicine"</i> coining the terms endemic and epidemic. However, only with the germ theory of diseases[3] (understanding disease in terms of bacteria and viruses) that we could truly attempt to model the spread of disease with some semblance of accuracy.
+        </div>
+        <div class="sectionB">
+            <h2>Pioneers of Mathematical Modelling</h2>
+            \begin{equation}\label{eq1}
+\frac{\text{d}u}{\text{d}a} = -  [\lambda (a) + \mu (a)]u
+\end{equation}
+\begin{equation}\label{eq2}
+\frac{\text{d}w}{\text{d}a} = [1-c(a)] \lambda(a) u - \mu(a)w
+\end{equation}
+        If we were to look at the very first academic publication dealing with the mathematical modelling of epidemics, we would see these two equations that Daniel Bernoulli developed to model and analyse the morbidity and mortality rates of smallpox. His results were able to show that inoculation against the virus would increase life expectancy by approximately three years[4].
+    </br><figure style="text-align:center"><img src="assets\g5.jpg" style="width:30%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Translation: title - "population against time",  legend - "population with smallpox", "Bernoulli's prediction, with smallpox", "actual, with smallpox". Though his predictions were not entirely correct Bernoulli made the first step into mathematical modelling (and in the right direction).[4]</figcaption></figure>
+    We can see that through such predictions being made, we can then take steps to reduce the spread and effect of disease, be it through vaccination, social distancing or mask wearing.</br>
+    Though modern mathematical modelling only takes shape with the work of Nobel laureate Ronald Ross, Anderson Gray McKendrick and William Ogilvy Kermack[5] in the 20th century, who published groundbreaking work on disease transmission modelling. From this we are able to derive many of the models still in use today with the SIR and derivative models being the most relevant for us.
+        </div>
+        <div class="sectionA">
+            <h2>Kermack-McKrendick Theory and Derived SIR model</h2>
+        <figure style="text-align:center"><img src="assets\flow1.svg" style="width:60%; background-color:transparent; box-shadow:0px 0px transparent"><figcaption style="opacity:0.5; font-size:12px;">The three compartments in the model alongside with their two transition rates.</figcaption></figure>
+
+            In its inceptive form, the Kermack-McKendrick model deals with a <b>compartmentalisted</b> population (compartments of S, I and R) and how each compartment evolves over time using differential equations.
+            \begin{equation}
+                \frac{\text{d}S}{\text{d}t} = - S \int_{0}^{\infty}\beta(a)I(a,t)\text{d}a
+            \end{equation}
+            \begin{equation}
+                \frac{\text{d}I}{\text{d}t} + \frac{\text{d}I}{\text{d}a} = \delta(a) S \int_{0}^{\infty}\beta(a)I(a,t)\text{d}a  - \gamma(a)I
+            \end{equation}
+            \begin{equation}
+                \frac{\text{d}R}{\text{d}t} = \int_{0}^{\infty}\gamma(a)I(a,t)\text{d}a
+            \end{equation}
+            As you can see, this is rather complicated as depends on \(a\), age. If we instead assume that the rate of recovery and transmisison are constant for all ages we reach the simplified SIR Model (N is the total population):
+            \begin{equation}
+    \frac{\text{d}S}{\text{d}t} = -\frac{\beta I S}{N}
+\end{equation}
+\begin{equation}
+    \frac{\text{d}I}{\text{d}t} = \frac{\beta I S}{N} - \gamma I
+\end{equation}
+\begin{equation}
+    \frac{\text{d}R}{\text{d}t} = \gamma I
+\end{equation}
+        Even with this relatively simple model, if we know \(\beta\) and \(\gamma\) - which are quantaties we can measure, we can start make predicitions on the spread of diseases.
+        </div>
+        <div class="sectionB">
+            <h2>Dynamics of the SIR Model</h2>
+            Each of the compartments fluctuates over time - they are <b>dynamic</b> - and this is seen as each compartment can be expressed as a function of time: \(S(t)\), \(I(t)\) and \(R(t)\). Transition between each of the compartments is treated as a probabilistic event with a rate dependent on a parameter (\(\beta\) and \(\gamma\) are the probabilities of a transition within a given time unit).
+            <figure style="text-align:center"><img src="assets\SIR.svg" style="width:80%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">A population of 1000 with 10 initial infected, modelled with different transition rates.</figcaption></figure>
+
+
+As it can be more helpful to monitor the rate at which a disease spreads and grows rather than the size of each compartment, the ratio known as the <b>basic reproduction number</b> - \(R_0\ = \frac{\beta}{\gamma}\) - is often used in place of the transition rates. This can be simply thought of as the average number of new infections arising from one infected individual.
+<figure style="text-align:center"><img src="assets\Diagram_Ro_Final_Deliverable-fullsize.webp" style="width:40%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">A simple visualisation of how \(R_0\) relates to infectivity.</figcaption></figure>
+<figure style="text-align:center"><img src="assets\r_0.svg" style="width:80%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">The evolution of a population of 1000 with 100 infected with different \(R_0\) values - "flattening the curve"?</figcaption></figure>
+
+        </div>
+        <div class="sectionA">
+            <h2>Vital Dynamics</h2>
+            <figure style="text-align:center"><img src="assets\vitalflows.svg" style="width:60%;  background-color:transparent; box-shadow:0px 0px transparent"><figcaption style="opacity:0.5; font-size:12px;">Including births and deaths in our compartmental flows.</figcaption></figure>
+
+            So far we have ignored what we can describe as vital dynamics (or demography) - births and deaths within the population. This is valid for epidemics such as influenza, where infection and recovery take place at a much faster rate than births and deaths, and where mortality from the disease itself is low.
+            However, looking at the Ebola virus or COVID-19 where lethality is a concern, it is important that our models include this.
+
+            \begin{equation}
+                \frac{\text{d}S}{\text{d}t} = \mu N - \nu S -\frac{\beta I S}{N}
+            \end{equation}
+            \begin{equation}
+                \frac{\text{d}I}{\text{d}t} = \frac{\beta I S}{N} - \nu I - \gamma I
+            \end{equation}
+            \begin{equation}
+                \frac{\text{d}R}{\text{d}t} = \gamma I - \nu R
+            \end{equation}
+
+            Much like the compartmental flows, births and deaths are treated as probabalistic events with a constant rate. For a constant population, the birth and deaths rates must be equal: \(\mu = \nu\). By including these vital dynamics, we can monitor how many mortalities we expect over a given time period and how this would compare to a non-pandemic situation (excess deaths statistic).
+            <figure style="text-align:center"><img src="assets\excessdeaths.png" style="width:80%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Excess deaths in the US from 2017 to 2020.[https://www.cdc.gov/nchs/nvss/vsrr/covid19/excess_deaths.htm]</figcaption></figure>
+        </br>The reason we can choose to look at excess deaths rather than deaths directly attributed to the pandemic is that we include periphary deaths such as people who were already vulnerable to deaths by infectious diseases (the elderly or those with chronic conditions) and deaths due to the overall burden on society.
+
+        </div>
+        <div class="sectionB">
+            <h2>SEIR and SEIRS Models</h2>
+            While we have many simplifications in order to model something as complicated as disease spread, we can choose to introduce different behaviours into our model to account for the specific disease/pandemic we are looking at.
+            <figure style="text-align:center"><img src="assets/seir.svg" style="width:80%;  background-color:transparent; box-shadow:0px 0px transparent"><figcaption style="opacity:0.5; font-size:12px;">Added <b>E</b>xposed compartment (with vital dynamics excluded).</figcaption></figure>
+            In many diseases where the incubation period is significant, as is the case for COVID-19, we may choose to include a fourth <b>E</b>xposed compartment. It is assumed that those in this compartment are not infectious; for the majority of the incubation period of COVID-19[maybe needs source?] this is true. This helps us understand how a population may contain many carriers even if many do not yet show symptoms.
+            Until now, we have also assumed that those recovered are no longer infectious but in the case of COVID-19 there have been a handful of reported cases of people showing symptoms many months after recovery[source? maybe]. We can incorporate this phenomena into our model by introducing a flow from <b>R</b>ecovered to <b>S</b>ucecptible.
+        </div>
+        <div class="sectionA">
+            <h2>Science Communications and COVID-19 Statistics</h2>
+            The role of statistical modelling is clearly of great help in managing government strategy and is used widely in the media- most notably within UK government briefings. Here, statistics and data representation are digested by the general public, guiding many of us in our political opinions and criticism of the government response. We must consider how COVID-19 data is presented to and interpreted by the wider population.
+        </br></br><b>How are statistics used in public information about COVID-19?</b>
+        Graphs and data models have become a key element of COVID-19 information, whether it be the regular public health social media posts or in the frequent government briefings. From the beginning of the pandemic, statistical predictions were used in communications and in lockdown decisions.
+</br>
+Graphs with predictive content have been used, and the Office for National Statistic has been an integral part of producing the data. As statistician David Spiegelhalter writes, “One lesson this pandemic has driven home to me is the unbelievable importance of the statistics” [1]. Good statistics have been critical in our understanding and in strategy, and as a result they have become increasingly used by the public and in communication.
+</br>
+However, in this circumstance, there is always the potential for things to become misconstrued or for misinformation to be circulated. We must be careful of taking the numbers for granted: they can easily become inflated and a small discrepancy can have a huge impact. For example, a series of letters in June 2020 between the UK Statistics Authority and the health secretary, Matt Hancock, suggested a discrepancy in how the number of tests carried out was out. Data for ‘number of tests carried out’ actually included testing kits sent out in the post as well as testing at government facilities and did not account for those who were tested twice, despite there being no data on the number of postal test actually completed [2]. However, due to the public nature of such data, there is an increased likelihood of it being challenged and spotted and, as we gain a greater statistical database, we can report with greater accuracy.
+</br>
+However, statistics within Public Health communications are often coupled with more experience based or shock tactic communications, such as that seen in recent marketing campaigns. This balances personal perception with statistics, a combination which Harford suggests can provide “the best insights” [1].
+</br></br><b>How have these campaigns been viewed?</b></br>
+There is a range of insight into both government briefings and public health campaigns. For example, whilst there has been praise for the use of statistics and scientific content in public communications, there has also been criticism that there is too much data provided in briefings, and not enough time to digest it before we hear ‘next slide please’ [3]. </br>
+
+The aesthetic choices also are important: for example, some maps have used brown and green colours, an industry standard colour palette. Dark brown areas were meant to represent the worst areas, and we should focus on them, but instead our eyes become drawn to the green areas. A simple change of colour palette could simply shift the area the eye is drawn to here [3].
+</br><figure style="text-align:center"><img src="assets\gov rate change graph.png" style="width:40%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Green and brown colour palette used in government graphs [3]</figcaption></figure>
+Similarly, technological considerations are important. Layouts are pushed right to the slide margins, meaning that information could easily be cut off. This also suggests that the government appears to be designing content for viewing on large TV screens, rather than streaming on phones or catching up on social media, where margins are more likely to be cropped to fit a frame. This may also be problematic as it could lead to the ‘small print’ data clarifications often found at the bottom of these slides being cut off an image.
+</br>
+Overall, however, it is amazing how quickly our statisticians came to produce these models and our means of presenting this are quickly evolving.
+</br></br><b>What innovative measures are being used to represent COVID-19 data?</b>
+Alongside the graphs we see in news briefings there are a number of ‘COVID -19 Dashboards’ such as the UK Summary [4]. This provides an easy-to-read version and interactive map components.
+</br>
+A dashboard created by John Hopkins University gives a world picture of cases [5]. This is a dynamic and interactive dashboard, with a creative approach that uses open source code for continuous adaptation and improvement. It also had a mobile version.
+</br>
+Creativity and means of explaining the data has also taken off within social media platforms, such as explaining the ‘flattening the curve’ graph using cats. Whilst this may have a humorous turn, its ability to explain the government catchphrase of ‘flattening the curve’ makes it more compelling to a general audience, as its creator Dr. Anne Marie Darling suggested [6].
+</br><figure style="text-align:center"><img src="assets\Cattening the Curve.jpg" style="width:40%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Dr Darling's viral 'Cattening the Curve' image [6]</figcaption></figure>
+From posts like this to the complexity of the statistics used, our communications surrounding the pandemic have become increasingly saturated with statistics. Whilst there will be problems with our definitions of the data and aesthetic presentation, there are teams working to improve this daily. Humorous approaches and public health strategy are helping this statistical content reach a wider audience, making statistics and modelling a critical aspect of COVID-19 strategy.
+</br></br><b>Engagement with COVID-19 Research</b>
+</br>Worldwide, academic research has massively focused on COVID-19 research- around $4\%$ of all papers according to some databases [1]. However, whilst increased societal engagement with general scientific research must be encouraged, there have been many examples of poor quality research being pushed to the spotlight or misinterpretation of academic research.
+</br>
+Perhaps the most infamous example being former US President, Donald Trump, highly public interest in the use of Hydroxychloroquine as a COVID-19 treatment [2]. Here, one poorly managed observational study suggested a treatment plan which, even itself stated that its findings “should be interpreted with some caution and should not be applied to patients treated outside of hospital settings.” [3], but still saw widespread reference and use. In fact, 24 journal papers on COVID-19 were retracted before December 2020 [2]. Retractions of journal papers typically take years but here the intense focus on any new research saw increased scrutiny. 'America's Frontline Doctors' are another example of the spread of COVID-19 misinformation. Aside from also pushing Hydroxychloroquine, this group have warned against Americans taking 'experimental vaccines [3].
+</br>
+The tabloid media reporting dubious headlines related to new scientific papers is nothing new- usually a retraction is offered a few weeks later, as either the study was taken out of context or the scientist or paper is discredited. Reporting on COVID-19 has been particularly unsuitable to this framework of news due to inherent uncertainty of early scientific investigation. Many publications have been reported on and widely read in their pre-peer review status- intentionally made available early for discussion by research specialists. New evidence concerning any field will sometimes be disproven later on, so caution should always be taken when communicating research to the general public.
+</br>
+The approach physics takes in research and in testing theories is highly relevant here. Tabloid headlines and non-expert opinions espoused on social media account for much of the public distrust of government actions concerning COVID-19. Encouraging engagement with physics should also include familiarising people with how a typical academic article is structured, emphasising that a discussion of the results within a paper usually reveals the weight of any headline claims.
+        </div>
+    </div>
+
+    <div class="title">
+        Mathematical Modelling
+    </div>
+
+
+    <div class="banner">
+        <table style="width:100%; height:100%;">
+        <tr>
+            <th onclick="document.location='index.html'" style="width:6.25%"><img src="assets\PP2.png" class="logo"></th>
+            <th onclick="document.location='testing.html'">Testing</th>
+            <th onclick="document.location='masks.html'">Masks</th>
+            <th onclick="document.location='longcovid.html'">Long Covid</th>
+            <th onclick="document.location='math.html'">Mathematical Modelling</th>
+        </tr>
+        </table>
+
+    </div>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
