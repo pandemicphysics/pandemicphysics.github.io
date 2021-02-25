@@ -27,6 +27,16 @@ img {
     margin-right: auto;
 }
 
+.gif {
+    border-radius: 5px;
+    box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 div.banner {
     position: fixed;
     bottom: 0;
