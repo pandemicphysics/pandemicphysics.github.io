@@ -21,92 +21,87 @@
         </div>
         <div class="sectionB">
             <h2>COVID-19 Transmission</h2>
-            <b>What is a PCR Test?</b></br>
-
-The Polymerase Chain Reaction (PCR) test used in COVID-19 testing is actually a Reverse Transcription Polymerase Chain Reaction (RT-PCR) or a real-time Reverse Transcription Polymerase Chain Reaction (rRT-PCR).  This is because the COVID-19 virus has extremely large, single stranded RNA genomes [1], however the PCR test uses the presence of DNA. The process of reverse transcription (RT) therefore allows for the PCR test to be used.</br>
-
-Reverse transcription is carried out by reaction with an enzyme, the reverse transcriptase, which generates the complementary DNA. This can then be used in the PCR test, which operates by cycling through different temperatures to heat and cool the mixture, which can then trigger specific chemical reactions that create identical copies of the target DNA. Each cycle approximately doubles the number of target DNA, and typically 35 cycles are carried out [2].</br>
-
-Fluorescent dyes are used as markers, and as new copies of the DNA are built these attach to the DNA strands and release the fluorescent dye, which is then measured by the machine’s computer. The amount of fluorescence after each cycle is tracked, and once a certain level of fluorescence is passed, it yields a positive test result. For rRT-PCR, the fluorescence is measured on the computer screen in real-time. The number of cycles required to surpass this limit is known as the cycle threshold, and the lower the cycle threshold, the higher the viral load [2].
-
-</br><figure style="text-align:center"><img src="assets\RT-PCR diagram.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Schematic showing the process of a RT-PCR. The probe contains the dyes used in testing and the primer is complementary sections of DNA that flank the area of interest. [3]</figcaption></figure>
-
-<b>How do we assess the success of the PCR test?</b></br>
-
-In the media, we currently hear our leaders and politicians often refer to the ‘sensitivity’ and the ‘specificity’ of the tests. But what does this terminology actually mean? </br>
-
-When a COVID-19 test is completed, there are 4 potential outcomes:</br></br>
-
-<div style="text-align:center">
-True Positive (TP): The test result is positive, and the person has coronavirus.</br>
-
-False Positive (FP): The test result is positive, and the person does not have coronavirus.</br>
-
-True Negative (TN): The test result is negative, and the person does not have coronavirus.</br>
-
-False Negative (FN): The test result is negative, and the person has coronavirus.</div></br>
-
-The prevalence of these outcomes in a population is then used to determine the sensitivity and the specificity.</br>
-
-The sensitivity is calculated as \(\frac{TP}{FN+TP}\), or the number of true positives out of all those with the virus. For a perfect test, there would be no false negatives, and this would equal 1.
-The specificity is calculated as \(\frac{TN}{TN+FP}\) or the number of true negatives out of all those without the virus. For a perfect test, there would be no false positives, and this would also equal 1.
-The precision is given by \(\frac{TP}{TP+FP}\), or the total number of true positives out of all positives, and the accuracy by \(\frac{TP+TN}{TP+TN+FP+FN}\), or the number of correct test results in the entire population.
-This is often portrayed using a receiver operating characteristic (ROC) graph, which plots sensitivity against 1- Specificity. These usually feature a line \(y=x\) which denotes the outcome if the result was randomly guessed [4].
-</br><figure style="text-align:center"><img src="assets\ROC Curve.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram of how to assess a test based on its ROC curve. [5]</figcaption></figure>
-
-To find out more about these concepts, and to see the impact the population size and test results can have, try this interactive Juypter notebook:</br> <h1>Juypter NOTEBOOK REMEMBER</h1>
+            Firstly and most simply, we recognise masks as a barrier to COVID-19 infecting individuals. A major spread of COVID-19 is through the air, travelling from one person's mouth and nose into another person's mouth, nose or eyes. We must address what our coughs, sneezes, talking and breathing produce in terms of droplets expelled into the air.</br>
 
 
-<b>What are the advantages and disadvantages of the PCR test?</b></br>
+COVID-19 is on the scale of around $0.15\mu m$ [1] but is carried in larger droplets of water expelled out of the mouth and nose from either coughing, sneezing, breathing or talking. These droplets are of scale $0.1\mu m-1000\mu m$ in diameter [2]. Notably, breathing throughout the day can produce roughly the same number of droplets through the day as coughing and sneezing do over the same period. Sneezing can produce $~10^{4}$ droplets with velocities up to $20ms^{-1}$ whilst coughing produces $10-100$ times fewer droplets with half the peak velocity of sneezing [2]. Talking produces around $50$ particles every second but at much lower velocities.
+</br>
 
-The PCR test is often seen as the ‘gold-standard’ in testing for coronavirus and is used as a confirmation of a positive from lateral flow testing. However, the PCR solely tests for the presence of the viral particles. It typically has a high specificity to detect the presence of RNA but has no means of suggesting if it is active or not.</br>
+Importantly, we can separate the sizes into three regimes: the smallest of less than $0.3\mu m$, the medium particles of $0.3\mu m-0.6\mu m$ and the largest at anything over $0.6\mu m$. Each regime travels through the air in very different ways- all described by notably different physics. Here we model a typical sneeze from an infected person in terms of these droplet regimes.
 
-A positive test result simply will tell if the COVID-19 gene fragment is present- and this does not necessarily mean that the person will be infectious in the period the PCR test is taken. However, to establish whether a person will pass on the virus, the PCR positive sample needs to be injected into culture cells to see if the virus reproduces there [6]. Therefore, in the situation of a global pandemic, it is not sustainable for this to be carried out for every positive test. However, the inactive RNA degrades in the body slowly over time so, depending on the cycle threshold used in testing or the point at which the test is taken, it may still even be positive after infectiousness has dissipated. </br>
+</br>
+The largest particles have sufficient momentum to travel out in the direction of the sneeze, with the very largest ($>10\mu m$) falling to the ground within a metre [1]. Whilst they have sufficient momentum to travel in an intuitive Newtonian like motion, we must be careful to remember how small these particles are. Settling times for a $3m$ fall are roughly $10$seconds for $100\mu m$, $4$minutes for $20\mu m$ and an hour for $5\mu m$ [3]. This information should change how we envisage a sneeze dissipating through the air- infectious droplets of any sizes can be present in the air without another member of the public nearby.
 
-In England, it is now a legal requirement to self-isolate for 10 days following a positive PCR test result, even though there is a small probability that this may be a false positive or you may not be infectious to others. However, with the severity and new variants of the coronavirus, many suggest that this is for the benefit of the greater population - it is far more probable you will have the virus and be able to transmit it following a positive PCR result. </br>
+</br>
+The medium sized particles are identified as the hardest for masks to create a barrier against (see the Physical models of droplet capture page). These particles are massive enough for air molecule collisions to be negligible but not so massive as to travel in straight lines. Instead, these particles follow air currents and can remain airborne for many hours.
 
-There is also consideration as to how many PCR tests are necessary to rule out, or to be clinically sure, of COVID-19. It is interesting that the PCR test manufacturers typically note that it is to be used solely for ‘clinical reference’, in that the PCR alone should not be used on its own for clinical diagnosis. The PCR has been incredibly useful and responsible for lives saved during this pandemic, but too much focus on it may divert from other respiratory and pneumonia type illnesses. For example, in a case presented by Isikbay et al [7], a patient with COVID-like symptoms underwent multiple CT scans and 4 PCR tests who later responded to treatment for an e-cigarette and vaping associated lung injury, with the potential that this treatment was delayed due to fears that he had COVID-19. Whilst we can appreciate that the pandemic is clearly a prevalent fear in the mind of our clinicians, this paper suggests that we need to decide upon a number of negative PCR tests that should be required to rule out COVID-19.</br>
-
-Overall, whilst further research and work on the PCR test is needed for clinical settings, we cannot fault its value in the current pandemic. The PCR test has been key in the UK testing system, and the technology used here has, quite literally, saved lives.
-
+</br>
+The smallest particles are light enough to interact with air molecules so will collide many times on very short time scales, hence following "Brownian motion", where the path of the particle is random. The collisions with the air molecules can leave these particles airborne nearly indefinitely [3].
+</br></br><video autoplay muted loop>
+    <source src="assets\Brownian motion video.mp4" type="video/mp4">
+Video not support by your browser :(
+</video></br>
+This short animation shows a simplified example of Brownian motion. We have our "air" particles in red and our "COVID-19" particle in the centre. The vectors show how collisions, highlighted using yellow explosions, change the trajectory. For half of the animation we see the air particles and for the other half we focus only on the motion of our COVID-19 particle. It is clear that the COVID-19 particle cannot efficiently travel in a certain direction and passes through the same points many times. In reality there would be many hundreds of collisions each second, making it very difficult for the COVID-19 particle to displace itself from a prescribed origin. We can describe the displacement from the origin mathematically using the Weiner process and produce a distribution to show us where the COVID-19 particle is most likely to be. Instead of giving a proof of what distribution Brownian motion follows, a simple python code of the Weiner process, or "random walk" function, is used.
+</br><figure style="text-align:center"><img src="assets\50 counts.png" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">50 random walks over 400 steps</figcaption></figure>
+<figure style="text-align:center"><img src="assets\150 counts.png" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">150 random walks over 400 steps</figcaption></figure>
+<figure style="text-align:center"><img src="assets\5000 counts.png" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">5000 random walks over 400 steps</figcaption></figure>
+</br> For each step of one in the x-direction the lines move up or down randomly by one in the y-direction. Some will be displaced just by chance far from the x-axis, where they all start, but most will remain close to it. This is much like the well known description of probability using a coin flip- $100$ flips can technically produce $100$ heads but the most likely outcome if $50$ heads and $50$ tails. This type of plot is known as 'stochastic', meaning it's well described by a probability distribution. By plotting a histogram of the y-value where each line ends up on we can infer the most likely position for our particle to be in from the animation- the origin. The histogram shows what is called a Gaussian, or normal, distribution. Knowledge of this motion is highly relevant- even just thinking about a mask as a simple kind of "netting" we see that collision with air particles cause these small particles to pass through the fibres many times, strongly increasing the chance of capture.
         </div>
 
     <div class="sectionA">
-        <h2>The Future of Testing</h2>
-        Whilst the LFT and PCR tests are currently the two most common types of COVID-19 testing currently used, there is an abundance of exciting research going to into methods which could potentially be useful in the future or in different settings.</br>
-    </br><b>How can we innovate the lateral flow test?</b></br>
+        <h2>Physical Models of Droplet Capture</h2>
+With a physical understanding of what masks must create a barrier against, how, specifically, do they block each size regime of droplet?
 
-A major shortcoming of the LFT is its purely qualitative readout- it gives no indication of the viral load, making weak positives problematic (see LFT page for more information). Some exciting nanoparticle research may provide us with an answer: Ventura et al [1] have suggested a colorimetric solution. Interactions between the COVID-19 viral particle and gold nanoparticles, along with a colorimetric biosensor creates a surface layer which then becomes red shifted. The optical densities, or the absorbance of the mixed solution is the considered quantitatively, but for high viral loads, the shift can be visible even by the naked eye.</br>
+Here we begin with a model of how a basic mask tackles this problem. The physical idea of a mask as a kind of netting is relatively inaccurate- for instance, using this idea we may guess that the smallest droplets are hardest to stop but it is in fact the medium sized regime that proves most difficult in practise. Let us begin with a measure of how "good" a mask is, or how much COVID-19 it potentially captures. We can define the mask's efficiency, $E$, as the amount of droplet flow, $F$ it blocks-
+\begin{equation}
+    E_{d_{1}-d_{2}}=\frac{F_{behind}}{F_{infront}}\times100\%
+\end{equation}
+The efficiency will tell us how good the mask is at blocking droplets but it can also be measured over various size ranges of droplet, $d_{1}-d_{2}$, as each diameter range presents a different challenge.
+</br><figure style="text-align:center"><img src="assets\filtration techniques.jpg" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Schematic showing filtration techniques of masks, not to scale [1].</figcaption></figure>
 
-This process is governed by localized surface plasmon resonance (SPR). A plasmon is the quanta of plasma oscillations, like the relationship between phonons and mechanical oscillations. SPR occurs when plane-polarised light hits a thin metal film- or in this case, gold nanoparticles- under the conditions for total internal reflection. Here, the gold nanoparticles are often smaller than the wavelength of the incident light. When the energy of the incoming photons from the light is correct, it can interact with the free electrons in the metal surface. This energy is transferred to the electrons, which then convert into surface plasmons. SPR therefore occurs when the momentum of the incoming light photons is equal to that of the plasmons. By adding a binding biosensor to the surface, a change in the refractive index is seen, thus resulting in changes to the wavelengths absorbed and the optical density [2].
-</br><figure style="text-align:center"><img src="assets\Surface-Plasmon-Resonance-of-gold-nanoparticles.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram showing gold nanoparticles interacting with an electromagnetic wave in localized SPR.[3]</figcaption></figure>
 
-This new lateral flow test offers both high sensitivity and performance: its ROC curve gives a value of 0.98. (see PCR page for more information on ROCs and sensitivity). The biosensor also allows us to quantify the viral load as well as establishing a test result, and by choosing a biosensor which only detects active viral particles, the actual degree of ineffectiveness of a specimen can be established. However, it does require a quantitative read-out and more equipment than the current LFT, so more trained professionals would be required to carry out this kind of testing on a large scale.</br>
-
-</br><b>What are some new means of testing in a clinical setting?</b></br>
-
-Whilst PCRs continue to be used in a clinical setting, there is an increase in research into the role of x-rays and computed tomography (CT) scanning in diagnosis.
-</br></br>
-<iframe src="https://www.youtube.com/embed/pIQD8jdmaVM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen height="400px" style="border: 1px solid #ccc; display:block; margin-left:auto; margin-right:auto;box-shadow: 0px 2.5px 2.5px rgba(0, 0, 0, 0.1); border-radius:5px; width:50%;" frameborder=0></iframe>
+<b>Gravity sedimentation</b>: For the very largest regime of particles, $>1\mu m$, gravity and inertial forces are the dominating force in their trajectory. We understand that any droplets that make it to the mask fibres do not follow the air flow but essentially travel downwards. Cotton fibres have a thickness of $8\mu m-20\mu m$ [2] which is comparable to this largest regime, suggesting that collisions with droplets will be extremely likely.
 </br>
-A chest CT has previously been used for the diagnosis of pneumonia and it is suggested that this can be used to also diagnosis COVID-19. These scans are then assessed for ground glass opacities, lobar location and the pattern of the lesions, and studies have suggested that ground glass opacities tend to be the most common for COVID-19 patients [5].</br>
-<figure style="text-align:center"><img src="assets\normallungCT.jpg" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">CT scan of a healthy set of lungs [6]. Small lung nodules are typical and are usually a benign growth on the lung.</figcaption></figure>
-<figure style="text-align:center"><img src="assets\covidCT.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">CT scan of the lungs of COVID-19 patients.[7] The red arrows point to (a) Ground-glass opacities, (b) consolidations, (c) consolidations with ground-glass opacities, (d) solid nodules. Ground glass opacities arise from fluid in the lungs, and consolidations arise when the space in the lung typically occupied by air is filled with some other substance or fluid.</figcaption></figure>
-
-Whilst it is unlikely that the use of imaging will stop the need for PCR tests, they do provide a number of advantages. PCR tests are currently not available in large parts of the global south, or in countries that are suffering from shortages of PCR testing equipment but both may have some rudimentary X-ray technology, which can be used to identify lung opacities. The imaging process is also quicker than the several hours required to complete a PCR test and has the potential to be useful in a clinical setting- a CT scan could suggest a potential COVID case which is then confirmed by a PCR.</br>
-
-However, there are also issues with an increased use of CT scans: increased demand can lead to higher costs and there is a transmission risk associated with bringing someone in for a scan- the entire room would have to be decontaminated following every scan, which can take between 30 minutes and an hour with hospital cleaning methods. An increase in radiology staff may also be necessary, and as a result of this the current suggestion is that CT should only be used in emergency cases. [8]
+<b>Inertial impaction</b>: Again for the largest particles ,$>1\mu m$, we have inertia as a major force. Since inertia is the resistance of the droplet to change its velocity, and velocity includes the direction of the droplet, the air flow around the fibres is again negligible so impact is highly likely. This regime covers the same sizes of droplets as gravity sedimentation but, noting that even these largest droplets can stay in the air for many minutes, we now have a model for $>1\mu m$ droplets at any velocity.
 </br>
-Research into the application of deep learning techniques to COVID-19 cases could help reduce the number of staff required in the process [9]. This can aid radiologists, reduce costs and lead to a faster decision to quarantine a patient. Here, a convolutional neural network (CNN) is trained to recognise the scans – this study used x-ray images - and thus predict the diagnosis. However, whilst early studies of this seem to have high sensitivity, precision and specificity, CNN models usually require vast amounts of data for training. Due to COVID-19 being a new virus, there is not a sufficiently large public data set of images yet- for example, studies currently have to take a set of images and manipulate them through rotation, noise addition and scaling to create a larger data set for training. However, with more information and images in the future, this method may become more prevalent in the current pandemic.
-<figure style="text-align:center"><img src="assets\CNN.png" style="width:50%;"><figcaption style="opacity:0.5; font-size:12px;">Diagram of the process of training a CNN to detect COVID-19 cases from X-ray images. [9]</figcaption></figure>
+<b>Interception</b>: For the other large droplets ,$0.6\mu m-1.0\mu m$ , in the largest regime interception is our primary filtration method. The inertia of the droplet is not large enough for the direction to remain unchanged due to air flow but the particle is deflected by less than $radius_{fibre}-radius_{droplet}$, assuming the initial path of the droplet is towards the centre of the fibre. Essentially, this method is when the droplet is notable deflected, just not by enough to avoid the fibre.
+</br>
+<b>Diffusion</b>: The smallest regime of droplet ,$&lt;0.3\mu m$, follows Brownian motion. Due to the random nature of the droplet path, capture is highly likely. If each layer of fibres has a small chance to capture the small droplet, the Brownian motion means that each droplet will go back and forth between fibres, increasing the likelihood of capture. Here we emphasise that initial intuitive thoughts that the smallest particles may be the hardest to filter are wrong. We must also note that the smallest particles are not only captured through chance of hitting a fibre- instead, masks make use of electrostatic attraction.
+</br>
+<b>Electrostatic attraction</b>: This is a method of filtration that isn't used in common masks but is made use of in medical grade masks. The fibres are very slightly electrically charged, inducing an electric charge in the nearby droplets, hence exerting a force on the droplet towards the fibres.
+</br><figure style="text-align:center"><img src="assets\newelectro.jpg" style="width:20%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Diagram displaying electrostatic forces, not to scale.</figcaption></figure>
 
-The scientific community is still pursuing innovation in its work during the pandemic, and the role of medical physics through scanning technologies, nanoparticle technologies and biophysics is invaluable in these efforts.
 
+We must realise that the electrostatic force is actually fairly weak and is therefore only effective when the droplets are in the smallest regime, moving slowly and nearby the fibre. Electrostatic attraction works well with diffusion- whilst slightly larger droplets may only be slightly deflected by the charged fibres, droplets colliding with air molecules will be will pass by the fibres many times. This hugely increases the chance of capture,
+    </div>
+    <div class="sectionB">
+        <h2>Comparison of selected masks</h2>
+In the UK, many different types of masks are available to a consumer. Shortages of surgical masks and Personal Protective Equipment have been worldwide issues throughout the pandemic, and recent studies have highlighted issues with home made or home solution masks- balaclavas, snoods etc. Note: snoods and balaclavas are not a mask and should never be used instead of one. It is important to realise how efficient a mask you need compared to what a front line worker needs. Here, lets examine how the surgical grade N95 mask is made to be much more efficient across all droplet regimes than a typical cotton mask.
+</br>
+
+An excellent study into aerosol filtration produced these results showing efficiency for various materials. For the $500nm-10\mu m$ droplet sizes, two optical particle counters are used- with one infront of the vacuum pump drawing the particles through the mask and another behind the mask. For the $30nm-250nm$ droplet sizes, the setup is physically similar with slight technical changes in order to control the charge on the droplets. We can see that the masks are always more effective in capturing small droplets when they are electrostatically charged.
+</br><figure style="text-align:center"><img src="assets\2nd graph diagram.jpeg" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Graphs showing the efficiency of various masks over two size ranges of droplet [1]</figcaption></figure>
+
+<b>Cotton mask: </b>A cotton mask will act as a physical barrier to incoming droplets. This type of cloth mask should be noted as a resort only used in unusual circumstance, like the COVID-19 pandemic, as it is relatively inefficient. The stacked fibres perform well when blocking large droplets but will have much less impact on our medium and small sized droplet regimes. Notably, cotton is not electrostatically charged, unlike some synthetic materials.
+Van der Waals forces hold any droplets to the fibres once contact is made- this is the same for any droplets size or method of droplet capture. The two types of Ven der Waals forces are the stronger "dipole-dipole interactions" and the weaker "London forces". On the scale of the droplets, the forces of the constituent molecules are no longer negligible. The London forces occur much like our electrostatic forces- a slightly negative side of a molecule induces the nearby side of another molecule to become slightly positive, causing electrostatic attraction. The dipole-dipole interactions are made up of interactions between two permanent dipoles. Some molecules have inbuilt asymmetry to their charge and so are already predisposed to electrostatic attraction with similar molecules.
+The efficiency of a single layer cotton mask is roughly $30\%$ for particles in the medium and large regimes and $10\%$ for particles in the smallest regime [1]. It is therefore clear why this type of mask is not suitable for a clinical setting but still will have a noticeable impact on the general spread of COVID-19. Notably, many cotton masks have two layers, increasing efficiency by roughly $40\%$ for all droplet regimes. At first reaction, we may ask why such masks are included in UK government regulations when so ineffective but it is important to realise the mathematics behind COVID-19 spread.
+</br>
+
+<b>N95 mask: </b> The N95 mask claims to be $95\%$ effective. Studies have found that the efficiency of the mask can drop below $95\%$ for particularly high flow rates of the medium droplet regime [2] but overall the N95 performs highly, filtering out essentially $100\%$ of small and large droplets. It has three layers of polypropylene which can induce electrostatic charge as the material is suitable for a process called electrospinning, which essentially puts excess charge on the polypropylene fibres.
+</br><figure style="text-align:center"><img src="assets\newnewnew.png" style="width:50%; background-color:seashell;"><figcaption style="opacity:0.5; font-size:12px;">Diagrams showing the N95 layers and material [2]</figcaption></figure>
+
+This type of mask can be used in a hospital setting very successfully as long as the masks are worn correctly. Although perhaps not a widespread issue for trained healthcare workers, the fit of a mask is highly important for a good efficiency. If a mask is not worn to a tight fit droplets can enter through the gaps- an issue compounded by the fact that the space between the mask and you're mouth is a low pressure area whenever you breath in, sucking in even more air from any gaps.
+
+    </div>
+    <div class="sectionA">
+        <h2>Conclusions</h2>
+        Mask wearing is particularly relevant in the COVID-19 pandemic due to the high numbers of asymptomatic carriers and an incubation period of a few days before symptoms present themselves. The UK's mask uptake is low compared to similar European countries and has also had an extremely high number of deaths for its population so it is clearly an area in which a renewed public health campaign would be useful.
+One particular issue in the UK could be the communication of government regulations- for instance, $20\%$ of adults believed face masks to be compulsory in shops in England, prior to the July 24th 2020 announcement for mask wearing to become compulsory in shops for the first time [1]. Another issue, not just present in the UK, is the significant number of men refusing to wear masks. A study conducted by Middlesex University London found that men were nearly twice as likely to strongly disagree with the statement that they "intend to wear a mask outside their home" [2]. The same study found that the reasoning behind this was that masks are "shameful, not cool and a sign of weakness". Clearly, not every society and not everyone in society has the same view of masks. It is the government's responsibility to promote the use of masks- with such solid scientific evidence that masks reduce the spread of COVID-19 this should not be a contentious issue.  
     </div>
     </div>
 
     <div class="title">
-        Testing
+        Masks
     </div>
 
 
